@@ -80,8 +80,4 @@ public class Shot {
         String.format("%.3f",mid);
         return mid;
     }
-
-
-
-
 }
