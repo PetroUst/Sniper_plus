@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Sniper</string>
+    <string name="distance_ukr">Відстань</string>
+    <string name= "wind_speed_ukr">Швидкість вітру</string>
+    <string name= "wind_degree_ukr">Кут між напрямком <br/> вітру і стволом</string>
+    <string name= "bullet_speed_ukr">Початкова швидкість кулі</string>
+    <string name= "target_high_ukr">Висота цілі</string>
+    <string name = "balistic_coefficient_ukr">Балістичний коефіцієнт</string>
+    <string name = "vertical_ukr">Вертикальна поправка: </string>
+    <string name="calculate_ukr">Вирахувати поправки</string>
+</resources>
