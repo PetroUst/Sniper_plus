@@ -29,8 +29,8 @@
 
     <TextView
         android:id="@+id/vertical_res"
-        android:layout_width="134dp"
-        android:layout_height="46dp"
+        android:layout_width="123dp"
+        android:layout_height="55dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="12dp"
         android:fontFamily="@font/inter_bold"
@@ -56,13 +56,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/target_high"
+        android:id="@+id/target_height"
         android:layout_width="234dp"
         android:layout_height="28dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="388dp"
         android:fontFamily="@font/inter_bold"
-        android:text="@string/target_high_ukr"
+        android:text="@string/target_height_ukr"
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -115,7 +115,7 @@
         android:hint="m/s"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_target_high" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_target_height" />
 
     <EditText
         android:id="@+id/edit_bc"
@@ -170,7 +170,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edit_target_high"
+        android:id="@+id/edit_target_height"
         android:layout_width="130dp"
         android:layout_height="48dp"
         android:layout_marginTop="16dp"
