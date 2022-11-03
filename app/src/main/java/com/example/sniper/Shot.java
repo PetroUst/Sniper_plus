@@ -11,16 +11,33 @@ import android.os.Bundle;
 
 
 public class Shot {
-
+    private static double high;
     private static double distance;
-    private static double target_high= 0.00001;
-    private static double bc;//балістичний коефіцієнт
+    private static double target_high;
+    private static double bc;   //балістичний коефіцієнт
     private static double wind_speed = 0.000001;
-    private static double bullet_speed;
     private static double wind_degree;
 
-    public static void setBullet_speed(double bullet_speed) {
-        Shot.bullet_speed = bullet_speed;
+    private static final double t = 0.001; //time interval
+    private static final double airDensity = 1.2;
+    private static final double g = 9.80665;
+
+    public static class Bullet{
+        private static double speed;
+        private static double weight;
+        private static double square;
+
+        public static void set_speed(double bullet_speed) {
+            Bullet.speed = bullet_speed;
+        }
+
+        public static void set_weight(double bullet_weight) {
+            Bullet.weight = bullet_weight;
+        }
+
+        public static void set_square(double bullet_square) {
+            Bullet.square = bullet_square;
+        }
     }
 
     public static void setTarget_high(double target_high) {
@@ -47,37 +64,42 @@ public class Shot {
         Shot.wind_speed = wind_speed;
     }
 
-    public static double calculate_vertical_correction(){
-        //EditText _distance = (EditText)this.findViewById(R.id.edit_distance);
-        //distance=Double.parseDouble(.getText().toString());
-        //EditText distance = (EditText)findViewById(R.id.edit_distance);
-        double alpha1 = 0, alpha2 = 80 * Math.PI / 180, mid=0, hCur = 0;
-        double vX, vY,T,l,t=0.00001,F,aX,aY;
-        double cur_distance=0, bullet_area =4.8e-5,
-        air_density = 1.2,weight=0.010886;
-        while(Math.abs(target_high-hCur)>0.0001){
-            mid = (alpha1 + alpha2) / 2;
-            vX = bullet_speed * Math.cos(mid);
-            vY = bullet_speed * Math.sin(mid);
-            hCur=0;
-            T=0;
-            l=0;
-            while(l<distance){
-                T+=t;
-                F=bc*air_density*bullet_area*vX*vX/2;
-                aX=F/weight;
-                vX-=aX*t;
 
-                aY = 9.80665;
-                vY-= aY*t;
-                hCur += vY * t;
-                l += vX * t;
+    static double correctionV(){
+        double correction = 0;
+        double alpha1 = -(45 * Math.PI) / 180, alpha2 = (45 * Math.PI) / 180;
+        double x, hCur = high, F, T;
+        double aX, aY;
+        double windV = 0; // = getWindV();
+
+
+        while(Math.abs(target_high - hCur) > 0.001){
+            correction = (alpha1 + alpha2) / 2;
+            double vX = Bullet.speed * Math.cos(correction) - windV;
+            double vY = Bullet.speed * Math.sin(correction);
+
+            F = bc * airDensity * Bullet.square * Math.pow(vX, 2) / 2;
+
+            T = 0;
+
+            hCur = high;
+            T = 0;
+            x = 0;
+
+            aX = -F/Bullet.weight;
+            aY = -g;
+
+            while(x < distance && x >= 0){ //Bullet flight
+                T += t;
+
+                hCur = vY * T + (aY * T * T) / 2;
+                x = vX * T + (aX * T * T) / 2;
             }
-            if (hCur > target_high) alpha2 = mid;
-            else alpha1 = mid;
+
+            if(hCur > target_high) alpha2 = correction;
+            else alpha1 = correction;
         }
-        mid= mid* 180 / Math.PI;
-        String.format("%.3f",mid);
-        return mid;
+
+        return correction * 180 / Math.PI;
     }
 }

@@ -28,17 +28,19 @@ public class MainActivity extends AppCompatActivity {
             EditText bullet_speed = (EditText) findViewById(R.id.edit_bullet_speed);
             EditText bc = (EditText) findViewById(R.id.edit_bc);
 
-
             //конвертую строки в дабл і передаю в поля класу shot
             Shot.setDistance(Double.parseDouble(distance.getText().toString()));
             Shot.setBc(Double.parseDouble(bc.getText().toString()));
             Shot.setWind_degree(Double.parseDouble(wind_degree.getText().toString()));
             Shot.setWind_speed(Double.parseDouble(wind_speed.getText().toString()));
             Shot.setTarget_high(Double.parseDouble(target_height.getText().toString()));
-            Shot.setBullet_speed(Double.parseDouble(bullet_speed.getText().toString()));
+
+            Shot.Bullet.set_weight(0.010866);
+            Shot.Bullet.set_square(0.000048);
+            Shot.Bullet.set_speed(Double.parseDouble(bullet_speed.getText().toString()));
 
 
-            res_vertical.setText(Double.toString((Shot.calculate_vertical_correction())));
+            res_vertical.setText(Double.toString((Shot.correctionV())));
 //        Double.toString(s.calculate_vertical_correction())
         }catch (Exception ex){
             res_vertical.setText("Введіть всі дані");
