@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
             EditText bc = (EditText) findViewById(R.id.edit_bc);
 
             //конвертую строки в дабл і передаю в поля класу shot
+            // test vcs
             Shot.setDistance(Double.parseDouble(distance.getText().toString()));
             Shot.setBc(Double.parseDouble(bc.getText().toString()));
             Shot.setWind_degree(Double.parseDouble(wind_degree.getText().toString()));
