@@ -18,6 +18,7 @@
         android:id="@+id/vertical"
         android:layout_width="169dp"
         android:layout_height="46dp"
+        android:autoSizeTextType="uniform"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/light"
@@ -31,6 +32,7 @@
         android:id="@+id/vertical2"
         android:layout_width="176dp"
         android:layout_height="46dp"
+        android:autoSizeTextType="uniform"
         android:layout_marginStart="16dp"
         android:layout_marginTop="72dp"
         android:fontFamily="@font/light"
@@ -43,10 +45,10 @@
     <TextView
         android:id="@+id/vertical_res"
         android:layout_width="216dp"
-        android:layout_height="47dp"
+        android:layout_height="46dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="4dp"
-        android:fontFamily="@font/e_ukraine_medium"
+        android:fontFamily="@font/light"
         android:gravity="center_horizontal|center_vertical"
         android:text="0.0"
         android:textAlignment="center"
@@ -57,11 +59,11 @@
 
     <TextView
         android:id="@+id/vertical_res2"
-        android:layout_width="212dp"
+        android:layout_width="216dp"
         android:layout_height="46dp"
         android:layout_marginTop="72dp"
         android:layout_marginEnd="4dp"
-        android:fontFamily="@font/e_ukraine_medium"
+        android:fontFamily="@font/light"
         android:gravity="center_horizontal|center_vertical"
         android:text="0.0"
         android:textAlignment="center"
@@ -69,11 +71,11 @@
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
     <EditText
         android:id="@+id/edit_distance"
         android:layout_width="129dp"
         android:layout_height="48dp"
+        android:autoSizeTextType="uniform"
         android:layout_marginTop="184dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
@@ -88,6 +90,7 @@
         android:layout_width="234dp"
         android:layout_height="28dp"
         android:layout_marginStart="16dp"
+        android:autoSizeTextType="uniform"
         android:layout_marginTop="372dp"
         android:fontFamily="@font/e_ukraine_medium"
         android:text="@string/target_height_ukr"
@@ -101,6 +104,7 @@
         android:layout_width="233dp"
         android:layout_height="51dp"
         android:layout_marginStart="16dp"
+        android:autoSizeTextType="uniform"
         android:layout_marginTop="420dp"
         android:fontFamily="@font/e_ukraine_medium"
         android:text="@string/bullet_speed_ukr"
@@ -113,6 +117,7 @@
         android:id="@+id/edit_wind_degree"
         android:layout_width="130dp"
         android:layout_height="48dp"
+        android:autoSizeTextType="uniform"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
@@ -125,6 +130,7 @@
         android:id="@+id/edit_wind_speed"
         android:layout_width="130dp"
         android:layout_height="48dp"
+        android:autoSizeTextType="uniform"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
@@ -138,6 +144,7 @@
         android:id="@+id/edit_bullet_speed"
         android:layout_width="130dp"
         android:layout_height="48dp"
+        android:autoSizeTextType="uniform"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
@@ -150,6 +157,7 @@
         android:id="@+id/edit_bc"
         android:layout_width="130dp"
         android:layout_height="48dp"
+        android:autoSizeTextType="uniform"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
@@ -163,6 +171,7 @@
         android:id="@+id/bal_coefficient"
         android:layout_width="233dp"
         android:layout_height="51dp"
+        android:autoSizeTextType="uniform"
         android:layout_marginStart="16dp"
         android:layout_marginTop="492dp"
         android:fontFamily="@font/e_ukraine_medium"
@@ -174,16 +183,19 @@
 
     <TextView
         android:id="@+id/distance"
-        android:layout_width="234dp"
-        android:layout_height="28dp"
+        android:layout_width="225dp"
+        android:layout_height="30dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="184dp"
+        android:autoSizeTextType="uniform"
         android:fontFamily="@font/e_ukraine_medium"
         android:text="@string/distance_ukr"
         android:textColor="#000000"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/wind_speed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
 
     <TextView
         android:id="@+id/wind_speed"
@@ -191,6 +203,9 @@
         android:layout_height="30dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="240dp"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMaxTextSize="30dp"
+        android:autoSizeMinTextSize="10dp"
         android:fontFamily="@font/e_ukraine_medium"
         android:text="@string/wind_speed_ukr"
         android:textColor="#000000"
@@ -202,6 +217,7 @@
         android:id="@+id/edit_target_height"
         android:layout_width="130dp"
         android:layout_height="48dp"
+        android:autoSizeTextType="uniform"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
@@ -214,6 +230,7 @@
         android:id="@+id/wind_degree"
         android:layout_width="234dp"
         android:layout_height="51dp"
+        android:autoSizeTextType="uniform"
         android:layout_marginStart="16dp"
         android:layout_marginTop="292dp"
         android:fontFamily="@font/e_ukraine_medium"
@@ -227,6 +244,7 @@
         android:id="@+id/calculate"
         android:layout_width="123dp"
         android:layout_height="55dp"
+        android:autoSizeTextType="uniform"
         android:layout_marginStart="272dp"
         android:layout_marginTop="496dp"
         android:background="@color/Main_Window_Background"
@@ -245,12 +263,13 @@
         android:layout_height="50dp"
         android:layout_marginTop="116dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/flagqqw" />
 
     <ImageButton
+        android:id="@+id/settings"
         android:layout_width="55dp"
         android:layout_height="55dp"
         android:layout_marginStart="16dp"
@@ -265,6 +284,7 @@
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <ImageButton
+        android:id="@+id/language"
         android:layout_width="55dp"
         android:layout_height="55dp"
         android:layout_marginStart="184dp"
@@ -279,6 +299,7 @@
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <ImageButton
+        android:id="@+id/minimap"
         android:layout_width="55dp"
         android:layout_height="55dp"
         android:layout_marginStart="96dp"
@@ -291,6 +312,9 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.696"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
