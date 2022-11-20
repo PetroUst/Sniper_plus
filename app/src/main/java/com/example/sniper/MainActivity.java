@@ -1,6 +1,10 @@
 package com.example.sniper;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.util.DisplayMetrics;
@@ -17,6 +21,8 @@ import android.os.Bundle;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 //test
 public class MainActivity extends AppCompatActivity {
 
@@ -154,22 +160,6 @@ public class MainActivity extends AppCompatActivity {
         ViewGroup.LayoutParams languagepr = (ViewGroup.MarginLayoutParams) language.getLayoutParams();
         languagepr.height = calcHeight(55);
         languagepr.width = calcWidth(55);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
     public void calculate (View v)
     {
@@ -203,11 +193,25 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
-
-
-
-
-
-
+    public void move_to_map (View v) {
+        String uri = "http://maps.google.com/maps?daddr=Lviv, Lviv Oblast, Ukraine";
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+        intent.setPackage("com.google.android.apps.maps");
+        try
+        {
+            startActivity(intent);
+        }
+        catch(ActivityNotFoundException ex)
+        {
+            try
+            {
+                Intent unrestrictedIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                startActivity(unrestrictedIntent);
+            }
+            catch(ActivityNotFoundException innerEx)
+            {
+                Toast.makeText(this, "Please install a maps application", Toast.LENGTH_LONG).show();
+            }
+        }
+    }
 }

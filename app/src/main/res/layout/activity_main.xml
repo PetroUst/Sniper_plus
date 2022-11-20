@@ -313,8 +313,21 @@
         app:layout_constraintVertical_bias="0.696"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
-
-
+    <Button
+        android:id="@+id/map"
+        android:layout_width="123dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="272dp"
+        android:layout_marginTop="496dp"
+        android:autoSizeTextType="uniform"
+        android:background="@color/Main_Window_Background"
+        android:fontFamily="@font/e_ukraine_bold"
+        android:onClick="move_to_map"
+        android:text="test_map"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.435" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
