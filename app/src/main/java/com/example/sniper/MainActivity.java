@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
             Shot.Bullet.set_square(0.000048);
             Shot.Bullet.set_speed(Double.parseDouble(bullet_speed.getText().toString()));
 
-
             res_vertical.setText(Double.toString((Shot.correctionV())));
 //        Double.toString(s.calculate_vertical_correction())
         }catch (Exception ex){
