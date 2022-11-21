@@ -32,14 +32,22 @@ public class MainActivity extends AppCompatActivity {
     private int Width = 409;
     private int Height = 571;
 
-    public int calcHeight(float value){
-        return (int)(dpHeight * (value/Height));
+    public int calcHeight(float value) {
+        return (int) (dpHeight * (value / Height));
     }
-    public int calcWidth(float value){
-        return (int) (dpWidth * (value/Width));
+
+    public int calcWidth(float value) {
+        return (int) (dpWidth * (value / Width));
     }
+
+    ImageButton settings_button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        settings_button = (ImageButton) findViewById(R.id.settings);
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -161,8 +169,8 @@ public class MainActivity extends AppCompatActivity {
         languagepr.height = calcHeight(55);
         languagepr.width = calcWidth(55);
     }
-    public void calculate (View v)
-    {
+
+    public void calculate(View v) {
         TextView res_vertical = (TextView) findViewById(R.id.vertical_res);
         //дістаю дані з текстових полів на головному екрані
         try {
@@ -188,30 +196,30 @@ public class MainActivity extends AppCompatActivity {
 
             res_vertical.setText(Double.toString((Shot.correctionV())));
 //        Double.toString(s.calculate_vertical_correction())
-        }catch (Exception ex){
+        } catch (Exception ex) {
             res_vertical.setText("Введіть всі дані");
         }
     }
 
-    public void move_to_map (View v) {
+    public void move_to_map(View v) {
         String uri = "http://maps.google.com/maps?daddr=Lviv, Lviv Oblast, Ukraine";
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
         intent.setPackage("com.google.android.apps.maps");
-        try
-        {
+        try {
             startActivity(intent);
-        }
-        catch(ActivityNotFoundException ex)
-        {
-            try
-            {
+        } catch (ActivityNotFoundException ex) {
+            try {
                 Intent unrestrictedIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
                 startActivity(unrestrictedIntent);
-            }
-            catch(ActivityNotFoundException innerEx)
-            {
+            } catch (ActivityNotFoundException innerEx) {
                 Toast.makeText(this, "Please install a maps application", Toast.LENGTH_LONG).show();
             }
         }
     }
+
+    public void move_to_settings(View v) {
+        Intent intentSettings = new Intent(MainActivity.this, Settings.class);
+        startActivity(intentSettings);
+    }
+
 }

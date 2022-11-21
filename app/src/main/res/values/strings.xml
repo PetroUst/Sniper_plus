@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">Sniper+</string>
     <string name="distance_ukr">Distance</string>
-    <string name= "wind_speed_ukr">Wind speed</string>
-    <string name= "wind_degree_ukr">Wind <br/> degree </string>
-    <string name= "bullet_speed_ukr">Bullet speed</string>
-    <string name= "target_height_ukr">Target height</string>
-    <string name = "balistic_coefficient_ukr">Balistic coefficient</string>
-    <string name = "vertical_ukr">Vertical tolerance: </string>
-    <string name = "horizontal_ukr">Horizontal tolerance: </string>
+    <string name="wind_speed_ukr">Wind speed</string>
+    <string name="wind_degree_ukr">Wind <br /> degree </string>
+    <string name="bullet_speed_ukr">Bullet speed</string>
+    <string name="target_height_ukr">Target height</string>
+    <string name="balistic_coefficient_ukr">Balistic coefficient</string>
+    <string name="vertical_ukr">Vertical tolerance: </string>
+    <string name="horizontal_ukr">Horizontal tolerance: </string>
     <string name="calculate_ukr">Calculate</string>
 </resources>

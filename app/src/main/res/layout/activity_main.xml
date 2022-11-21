@@ -240,13 +240,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <Button
         android:id="@+id/calculate"
         android:layout_width="123dp"
         android:layout_height="55dp"
-        android:autoSizeTextType="uniform"
         android:layout_marginStart="272dp"
         android:layout_marginTop="496dp"
+        android:autoSizeTextType="uniform"
         android:background="@color/Main_Window_Background"
         android:fontFamily="@font/e_ukraine_bold"
         android:onClick="calculate"
@@ -254,8 +255,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.768" />
-
+        app:layout_constraintVertical_bias="0.944" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -276,11 +276,12 @@
         android:layout_marginTop="520dp"
         android:background="@color/Main_Window_Background"
         android:scaleType="centerCrop"
+        android:onClick="move_to_settings"
         android:src="@drawable/set"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.703"
+        app:layout_constraintVertical_bias="0.69"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <ImageButton
