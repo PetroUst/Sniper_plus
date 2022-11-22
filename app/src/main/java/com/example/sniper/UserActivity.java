@@ -1,4 +1,4 @@
-package com.example.sniper;
+/*package com.example.sniper;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -51,7 +51,7 @@ public class UserActivity extends AppCompatActivity {
         // если 0, то добавление
         if (bulletId > 0) {
             // получаем элемент по id из бд
-            userCursor = db.rawQuery("SELECT * FROM " + DBHandler.TABLE + " WHERE " +
+            userCursor = db.rawQuery("SELECT * FROM bullet WHERE " +
                     DBHandler.COLUMN_ID + "=?", new String[]{String.valueOf(bulletId)});
             userCursor.moveToFirst();
             caliberBox.setText(userCursor.getString(1));
@@ -94,4 +94,4 @@ public class UserActivity extends AppCompatActivity {
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         startActivity(intent);
     }
-}
+}*/

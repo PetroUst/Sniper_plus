@@ -7,14 +7,103 @@
     android:background="@color/Main_Window_Background"
     tools:context=".MainActivity">
 
-    <androidx.constraintlayout.widget.Guideline
+    <EditText
+        android:id="@+id/idEdtCaliber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="140dp"
+        android:hint="Enter bullet caliber"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/idEdtG1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/idEdtWeight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter bullet weight"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/idBtnAddBullet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.834" />
+
+    <EditText
+        android:id="@+id/idEdtG1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="162dp"
+        android:hint="Enter bullet G1"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/idBtnAddBullet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/idEdtG7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter bullet G7"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/idBtnAddBullet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.671" />
+
+    <EditText
+        android:id="@+id/idEdtStart_speed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter bullet start speed"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/idBtnAddBullet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.342" />
+
+    <Button
+        android:id="@+id/idBtnAddBullet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="314dp"
+        android:layout_marginEnd="10dp"
+        android:text="Add Bullet"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idEdtG1" />
+
+
+
+
+    <!--<androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="20dp" />
 
-    <!--<TextView
+
+    <TextView
         android:id="@+id/vertical"
         android:layout_width="233dp"
         android:layout_height="49dp"
@@ -208,7 +297,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/vertical" />
--->
+
     <Button
         android:id="@+id/addButton"
         android:layout_width="0dp"
@@ -233,5 +322,5 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addButton"
         app:layout_constraintVertical_bias="1.0" />
-
+-->
 </androidx.constraintlayout.widget.ConstraintLayout>
