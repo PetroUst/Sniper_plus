@@ -12,7 +12,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_end="450dp" />
+        app:layout_constraintGuide_end="450dp"/>
+
 
     <TextView
         android:id="@+id/vertical"
@@ -71,264 +72,305 @@
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <EditText
-        android:id="@+id/edit_distance"
-        android:layout_width="129dp"
-        android:layout_height="48dp"
-        android:autoSizeTextType="uniform"
-        android:layout_marginTop="184dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:hint="m"
-        android:inputType="numberDecimal"
-        android:textAlignment="textStart"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/target_height"
-        android:layout_width="234dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="16dp"
-        android:autoSizeTextType="uniform"
-        android:layout_marginTop="372dp"
-        android:fontFamily="@font/e_ukraine_medium"
-        android:text="@string/target_height_ukr"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/targetHeightLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/windDegreeLayout">
+
+        <TextView
+            android:id="@+id/target_height"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:fontFamily="@font/e_ukraine_medium"
+            android:text="@string/target_height_ukr"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.25"/>
+
+        <EditText
+            android:id="@+id/edit_target_height"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:autoSizeTextType="uniform"
+            android:ems="10"
+            android:hint="m, 0"
+            android:inputType="numberDecimal"
+            android:minHeight="48dp"
+            android:textAlignment="textStart"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/bulletSpeedLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/targetHeightLayout">
 
     <TextView
         android:id="@+id/bullet_speed"
-        android:layout_width="233dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="16dp"
-        android:autoSizeTextType="uniform"
-        android:layout_marginTop="420dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
         android:fontFamily="@font/e_ukraine_medium"
         android:text="@string/bullet_speed_ukr"
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/edit_wind_degree"
-        android:layout_width="130dp"
-        android:layout_height="48dp"
-        android:autoSizeTextType="uniform"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:hint="degree"
-        android:inputType="numberDecimal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_wind_speed" />
-
-    <EditText
-        android:id="@+id/edit_wind_speed"
-        android:layout_width="130dp"
-        android:layout_height="48dp"
-        android:autoSizeTextType="uniform"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:hint="m/s"
-        android:inputType="numberDecimal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_distance"
-        tools:ignore="DuplicateSpeakableTextCheck,DuplicateSpeakableTextCheck" />
-
-    <EditText
-        android:id="@+id/edit_bullet_speed"
-        android:layout_width="130dp"
-        android:layout_height="48dp"
-        android:autoSizeTextType="uniform"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:hint="m/s"
-        android:inputType="numberDecimal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_target_height" />
-
-    <EditText
-        android:id="@+id/edit_bc"
-        android:layout_width="130dp"
-        android:layout_height="48dp"
-        android:autoSizeTextType="uniform"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:hint="G7"
-        android:inputType="numberDecimal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_bullet_speed"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <TextView
-        android:id="@+id/bal_coefficient"
-        android:layout_width="233dp"
-        android:layout_height="51dp"
-        android:autoSizeTextType="uniform"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="492dp"
-        android:fontFamily="@font/e_ukraine_medium"
-        android:text="@string/balistic_coefficient_ukr"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/distance"
-        android:layout_width="225dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="184dp"
-        android:autoSizeTextType="uniform"
-        android:fontFamily="@font/e_ukraine_medium"
-        android:text="@string/distance_ukr"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/wind_speed"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25" />
+        app:layout_constraintVertical_bias="0.25"/>
+
+        <EditText
+            android:id="@+id/edit_bullet_speed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:autoSizeTextType="uniform"
+            android:ems="10"
+            android:hint="m/s"
+            android:inputType="numberDecimal"
+            android:minHeight="48dp"
+            android:textAlignment="textStart"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/balisticCiefficientLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/bulletSpeedLayout">
+
+        <TextView
+            android:id="@+id/bal_coefficient"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:fontFamily="@font/e_ukraine_medium"
+            android:text="@string/balistic_coefficient_ukr"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.25"/>
+
+        <EditText
+            android:id="@+id/edit_bc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:autoSizeTextType="uniform"
+            android:ems="10"
+            android:hint="G7"
+            android:inputType="numberDecimal"
+            android:minHeight="48dp"
+            android:textAlignment="textStart"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/distanceLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/flagLayout"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/distance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:fontFamily="@font/e_ukraine_medium"
+            android:text="@string/distance_ukr"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.25" />
+
+        <EditText
+            android:id="@+id/edit_distance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:autoSizeTextType="uniform"
+            android:ems="10"
+            android:hint="m"
+            android:inputType="numberDecimal"
+            android:minHeight="48dp"
+            android:textAlignment="textStart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/windSpeedLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/distanceLayout">
 
     <TextView
         android:id="@+id/wind_speed"
-        android:layout_width="231dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="240dp"
-        android:autoSizeTextType="uniform"
-        android:autoSizeMaxTextSize="30dp"
-        android:autoSizeMinTextSize="10dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
         android:fontFamily="@font/e_ukraine_medium"
         android:text="@string/wind_speed_ukr"
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/edit_target_height"
-        android:layout_width="130dp"
-        android:layout_height="48dp"
-        android:autoSizeTextType="uniform"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:hint="m, 0"
-        android:inputType="numberDecimal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_wind_degree" />
-
-    <TextView
-        android:id="@+id/wind_degree"
-        android:layout_width="234dp"
-        android:layout_height="51dp"
-        android:autoSizeTextType="uniform"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="292dp"
-        android:fontFamily="@font/e_ukraine_medium"
-        android:text="@string/wind_degree_ukr"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <Button
-        android:id="@+id/calculate"
-        android:layout_width="123dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="272dp"
-        android:layout_marginTop="496dp"
-        android:autoSizeTextType="uniform"
-        android:background="@color/Main_Window_Background"
-        android:fontFamily="@font/e_ukraine_bold"
-        android:onClick="calculate"
-        android:text="@string/calculate_ukr"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.944" />
+        app:layout_constraintVertical_bias="0.25"/>
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="414dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="116dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/flagqqw" />
+        <EditText
+            android:id="@+id/edit_wind_speed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:autoSizeTextType="uniform"
+            android:ems="10"
+            android:hint="m/s"
+            android:inputType="numberDecimal"
+            android:minHeight="48dp"
+            android:textAlignment="textStart"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/settings"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="520dp"
-        android:background="@color/Main_Window_Background"
-        android:scaleType="centerCrop"
-        android:onClick="move_to_settings"
-        android:src="@drawable/set"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.69"
-        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
-    <ImageButton
-        android:id="@+id/language"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="184dp"
-        android:layout_marginTop="520dp"
-        android:background="@color/Main_Window_Background"
-        android:scaleType="centerCrop"
-        android:src="@drawable/lang"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.67"
-        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+    <LinearLayout
+        android:id="@+id/windDegreeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/windSpeedLayout">
 
-    <ImageButton
-        android:id="@+id/minimap"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="520dp"
-        android:background="@color/Main_Window_Background"
-        android:scaleType="centerCrop"
-        android:src="@drawable/mm"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.696"
-        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+        <TextView
+            android:id="@+id/wind_degree"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:fontFamily="@font/e_ukraine_medium"
+            android:text="@string/wind_degree_ukr"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.25" />
 
-    <Button
-        android:id="@+id/map"
-        android:layout_width="123dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="272dp"
-        android:layout_marginTop="496dp"
-        android:autoSizeTextType="uniform"
-        android:background="@color/Main_Window_Background"
-        android:fontFamily="@font/e_ukraine_bold"
-        android:onClick="move_to_map"
-        android:text="test_map"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.435" />
+        <EditText
+            android:id="@+id/edit_wind_degree"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:autoSizeTextType="uniform"
+            android:ems="10"
+            android:hint="degree"
+            android:inputType="numberDecimal"
+            android:minHeight="48dp"
+            android:textAlignment="textStart"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:layout_editor_absoluteY="295dp" />
+    </LinearLayout>
 
+
+    <LinearLayout
+        android:id="@+id/flagLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/vertical2">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.666"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/flagqqw" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/buttonsEvery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/balisticCiefficientLayout">
+
+        <ImageButton
+            android:id="@+id/settings"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:padding="10dp"
+            android:layout_weight="0.5"
+            android:background="@color/Main_Window_Background"
+            android:scaleType="centerCrop"
+            android:onClick="move_to_settings"
+            android:src="@drawable/set"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.69"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck"/>
+
+        <ImageButton
+            android:id="@+id/minimap"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:padding="10dp"
+
+            android:layout_weight="0.5"
+            android:background="@color/Main_Window_Background"
+            android:scaleType="centerCrop"
+            android:src="@drawable/mm"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.696"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck"/>
+
+        <ImageButton
+            android:id="@+id/language"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:padding="10dp"
+            android:layout_weight="0.5"
+            android:background="@color/Main_Window_Background"
+            android:scaleType="centerCrop"
+            android:src="@drawable/lang"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.67"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck"/>
+        <Button
+            android:id="@+id/calculate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:autoSizeTextType="uniform"
+            android:background="@color/Main_Window_Background"
+            android:fontFamily="@font/e_ukraine_bold"
+            android:onClick="calculate"
+            android:text="@string/calculate_ukr"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.944" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
