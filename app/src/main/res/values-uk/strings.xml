@@ -9,4 +9,5 @@
     <string name = "vertical_ukr">Вертикальна поправка: </string>
     <string name = "horizontal_ukr">Горизонтальна поправка: </string>
     <string name="calculate_ukr">Вирахувати поправки</string>
+    <string name="error_Enter_all_data">Введіть всі дані</string>
 </resources>

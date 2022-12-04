@@ -9,4 +9,5 @@
     <string name="vertical_ukr">Vertical tolerance: </string>
     <string name="horizontal_ukr">Horizontal tolerance: </string>
     <string name="calculate_ukr">Calculate</string>
+    <string name="error_Enter_all_data">Enter all data</string>
 </resources>
