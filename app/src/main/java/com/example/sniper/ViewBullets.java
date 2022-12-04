@@ -16,10 +16,10 @@ public class ViewBullets extends AppCompatActivity {
 
     // creating variables for our array list,
     // dbhandler, adapter and recycler view.
-    private ArrayList<BulletModel> courseModalArrayList;
+    private ArrayList<BulletModel> BulletModalArrayList;
     private DBHandler dbHandler;
-    private BulletRVAdapter courseRVAdapter;
-    private RecyclerView coursesRV;
+    private BulletRVAdapter bulletRVAdapter;
+    private RecyclerView bulletsRV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,22 +27,22 @@ public class ViewBullets extends AppCompatActivity {
         setContentView(R.layout.activity_view_bullets);
 
         // initializing our all variables.
-        courseModalArrayList = new ArrayList<>();
+        BulletModalArrayList = new ArrayList<>();
         dbHandler = new DBHandler(ViewBullets.this);
 
         // getting our course array
         // list from db handler class.
-        courseModalArrayList = dbHandler.readBullets();
+        BulletModalArrayList = dbHandler.readBullets();
 
         // on below line passing our array lost to our adapter class.
-        courseRVAdapter = new BulletRVAdapter(courseModalArrayList, ViewBullets.this);
-        coursesRV = findViewById(R.id.idRVBullets);
+        bulletRVAdapter = new BulletRVAdapter(BulletModalArrayList, ViewBullets.this);
+        bulletsRV = findViewById(R.id.idRVBullets);
 
         // setting layout manager for our recycler view.
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(ViewBullets.this, RecyclerView.VERTICAL, false);
-        coursesRV.setLayoutManager(linearLayoutManager);
+        bulletsRV.setLayoutManager(linearLayoutManager);
 
         // setting our adapter to recycler view.
-        coursesRV.setAdapter(courseRVAdapter);
+        bulletsRV.setAdapter(bulletRVAdapter);
     }
 }
