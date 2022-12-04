@@ -6,7 +6,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
+    android:background="@color/Main_Window_Background"
     tools:context=".Settings">
+
 
     <EditText
         android:id="@+id/Edit_caliber"
@@ -66,7 +68,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:id="@+id/db_reset"
-            android:text="reset"/>
+            android:onClick="show_bullets"
+            android:text="Show all"/>
     </LinearLayout>
 
 </LinearLayout>

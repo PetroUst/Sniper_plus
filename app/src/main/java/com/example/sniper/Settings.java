@@ -2,6 +2,7 @@ package com.example.sniper;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,20 +11,19 @@ import android.widget.Toast;
 
 public class Settings extends AppCompatActivity {
     private DBHandler dbHandler;
-
+    private EditText BulletCalEdt, BulletWeightEdt, BulletG1Edt, BulletG7Edt, BulletStart_speedEdt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-
+        dbHandler = new DBHandler(Settings.this);
+        BulletCalEdt = findViewById(R.id.Edit_caliber);
+        BulletWeightEdt = findViewById(R.id.Edit_weight);
+        BulletG1Edt = findViewById(R.id.Edit_g1);
+        BulletG7Edt = findViewById(R.id.Edit_g7);
+        BulletStart_speedEdt = findViewById(R.id.Edit_start_speed);
     }
     public void addBullet(View v) {
-        dbHandler = new DBHandler(Settings.this);
-        EditText BulletCalEdt = findViewById(R.id.Edit_caliber);
-        EditText BulletWeightEdt = findViewById(R.id.Edit_weight);
-        EditText BulletG1Edt = findViewById(R.id.Edit_g1);
-        EditText BulletG7Edt = findViewById(R.id.Edit_g7);
-        EditText BulletStart_speedEdt = findViewById(R.id.Edit_start_speed);
         String BulletCal = BulletCalEdt.getText().toString();
         Float BulletWeight = Float.valueOf(BulletWeightEdt.getText().toString());
         Float BulletG1 = Float.valueOf(BulletG1Edt.getText().toString());
@@ -41,6 +41,13 @@ public class Settings extends AppCompatActivity {
         BulletG1Edt.setText("");
         BulletWeightEdt.setText("");
         BulletWeightEdt.setText("");
+    }
+
+
+    public void show_bullets(View v) {
+        // opening a new activity via a intent.
+        Intent allBullets = new Intent(Settings.this, ViewBullets.class);
+        startActivity(allBullets);
     }
 
 }
