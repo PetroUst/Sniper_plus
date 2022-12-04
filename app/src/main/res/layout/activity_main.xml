@@ -7,104 +7,328 @@
     android:background="@color/Main_Window_Background"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/idEdtCaliber"
-        android:layout_width="match_parent"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="130dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginBottom="140dp"
-        android:hint="Enter bullet caliber"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/idEdtG1"
+        app:layout_constraintGuide_end="450dp" />
+
+    <TextView
+        android:id="@+id/vertical"
+        android:layout_width="169dp"
+        android:layout_height="46dp"
+        android:autoSizeTextType="uniform"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/light"
+        android:text="@string/vertical_ukr"
+        android:textColor="#000000"
+        android:textSize="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/vertical2"
+        android:layout_width="176dp"
+        android:layout_height="46dp"
+        android:autoSizeTextType="uniform"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="72dp"
+        android:fontFamily="@font/light"
+        android:text="@string/horizontal_ukr"
+        android:textColor="#000000"
+        android:textSize="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/vertical_res"
+        android:layout_width="216dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
+        android:fontFamily="@font/light"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="0.0"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/vertical_res2"
+        android:layout_width="216dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="4dp"
+        android:fontFamily="@font/light"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="0.0"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <EditText
+        android:id="@+id/edit_distance"
+        android:layout_width="129dp"
+        android:layout_height="48dp"
+        android:autoSizeTextType="uniform"
+        android:layout_marginTop="184dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="m"
+        android:inputType="numberDecimal"
+        android:textAlignment="textStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/target_height"
+        android:layout_width="234dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="16dp"
+        android:autoSizeTextType="uniform"
+        android:layout_marginTop="372dp"
+        android:fontFamily="@font/e_ukraine_medium"
+        android:text="@string/target_height_ukr"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/bullet_speed"
+        android:layout_width="233dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="16dp"
+        android:autoSizeTextType="uniform"
+        android:layout_marginTop="420dp"
+        android:fontFamily="@font/e_ukraine_medium"
+        android:text="@string/bullet_speed_ukr"
+        android:textColor="#000000"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/idEdtWeight"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter bullet weight"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/idBtnAddBullet"
+        android:id="@+id/edit_wind_degree"
+        android:layout_width="130dp"
+        android:layout_height="48dp"
+        android:autoSizeTextType="uniform"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="degree"
+        android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.834" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_wind_speed" />
 
     <EditText
-        android:id="@+id/idEdtG1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginBottom="162dp"
-        android:hint="Enter bullet G1"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/idBtnAddBullet"
+        android:id="@+id/edit_wind_speed"
+        android:layout_width="130dp"
+        android:layout_height="48dp"
+        android:autoSizeTextType="uniform"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="m/s"
+        android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_distance"
+        tools:ignore="DuplicateSpeakableTextCheck,DuplicateSpeakableTextCheck" />
+
+    <EditText
+        android:id="@+id/edit_bullet_speed"
+        android:layout_width="130dp"
+        android:layout_height="48dp"
+        android:autoSizeTextType="uniform"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="m/s"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_target_height" />
+
+    <EditText
+        android:id="@+id/edit_bc"
+        android:layout_width="130dp"
+        android:layout_height="48dp"
+        android:autoSizeTextType="uniform"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="G7"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_bullet_speed"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/bal_coefficient"
+        android:layout_width="233dp"
+        android:layout_height="51dp"
+        android:autoSizeTextType="uniform"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="492dp"
+        android:fontFamily="@font/e_ukraine_medium"
+        android:text="@string/balistic_coefficient_ukr"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/distance"
+        android:layout_width="225dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="184dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/e_ukraine_medium"
+        android:text="@string/distance_ukr"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/wind_speed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <TextView
+        android:id="@+id/wind_speed"
+        android:layout_width="231dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="240dp"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMaxTextSize="30dp"
+        android:autoSizeMinTextSize="10dp"
+        android:fontFamily="@font/e_ukraine_medium"
+        android:text="@string/wind_speed_ukr"
+        android:textColor="#000000"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/idEdtG7"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter bullet G7"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/idBtnAddBullet"
+        android:id="@+id/edit_target_height"
+        android:layout_width="130dp"
+        android:layout_height="48dp"
+        android:autoSizeTextType="uniform"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="m, 0"
+        android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.671" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_wind_degree" />
 
-    <EditText
-        android:id="@+id/idEdtStart_speed"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter bullet start speed"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/idBtnAddBullet"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+    <TextView
+        android:id="@+id/wind_degree"
+        android:layout_width="234dp"
+        android:layout_height="51dp"
+        android:autoSizeTextType="uniform"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="292dp"
+        android:fontFamily="@font/e_ukraine_medium"
+        android:text="@string/wind_degree_ukr"
+        android:textColor="#000000"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.342" />
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <Button
-        android:id="@+id/idBtnAddBullet"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="314dp"
-        android:layout_marginEnd="10dp"
-        android:text="Add Bullet"
-        android:textAllCaps="false"
+        android:id="@+id/calculate"
+        android:layout_width="123dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="272dp"
+        android:layout_marginTop="496dp"
+        android:autoSizeTextType="uniform"
+        android:background="@color/Main_Window_Background"
+        android:fontFamily="@font/e_ukraine_bold"
+        android:onClick="calculate"
+        android:text="@string/calculate_ukr"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idEdtG1" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.944" />
 
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="414dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="116dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/flagqqw" />
 
-    <!--new button for opening our button list activity-->
-    <Button
-        android:id="@+id/idBtnReadBullet"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_marginBottom="84dp"
-        android:text="Show Bullets"
-        android:textAllCaps="false"
+    <ImageButton
+        android:id="@+id/settings"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="520dp"
+        android:background="@color/Main_Window_Background"
+        android:scaleType="centerCrop"
+        android:onClick="move_to_settings"
+        android:src="@drawable/set"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idBtnAddBullet"
-        tools:layout_editor_absoluteX="9dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.69"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/language"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="184dp"
+        android:layout_marginTop="520dp"
+        android:background="@color/Main_Window_Background"
+        android:scaleType="centerCrop"
+        android:src="@drawable/lang"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.67"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/minimap"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="520dp"
+        android:background="@color/Main_Window_Background"
+        android:scaleType="centerCrop"
+        android:src="@drawable/mm"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.696"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/map"
+        android:layout_width="123dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="272dp"
+        android:layout_marginTop="496dp"
+        android:autoSizeTextType="uniform"
+        android:background="@color/Main_Window_Background"
+        android:fontFamily="@font/e_ukraine_bold"
+        android:onClick="move_to_map"
+        android:text="test_map"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.435" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
