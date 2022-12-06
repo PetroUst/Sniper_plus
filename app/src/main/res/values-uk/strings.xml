@@ -10,4 +10,17 @@
     <string name = "horizontal_ukr">Горизонтальна поправка: </string>
     <string name="calculate_ukr">Вирахувати поправки</string>
     <string name="error_Enter_all_data">Введіть всі дані</string>
+
+    <string name="caliber">Введіть калібр</string>
+    <string name="weight">Введіть вагу</string>
+    <string name="BC">Введіть BC(G1)</string>
+    <string name="BC_1">Введіть BC(G7 якщо існує)</string>
+    <string name="start_speed">Введіть початкову швидкість</string>
+    <string name="btn_add">Додати</string>
+    <string name="btn_show">Показати все</string>
+
+    <string name="meters">  м</string>
+    <string name="meters_sec">  м/c</string>
+    <string name="degree">  градуси</string>
+    <string name="g7">  G7</string>
 </resources>

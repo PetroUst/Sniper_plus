@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_end="450dp"/>
+        app:layout_constraintGuide_end="822dp" />
 
 
     <TextView
@@ -52,6 +52,7 @@
         android:fontFamily="@font/light"
         android:gravity="center_horizontal|center_vertical"
         android:text="0.0"
+        android:background="@android:drawable/editbox_background"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="18dp"
@@ -67,6 +68,7 @@
         android:fontFamily="@font/light"
         android:gravity="center_horizontal|center_vertical"
         android:text="0.0"
+        android:background="@android:drawable/editbox_background"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="18dp"
@@ -102,10 +104,11 @@
             android:layout_weight="1"
             android:autoSizeTextType="uniform"
             android:ems="10"
-            android:hint="m, 0"
+            android:hint="@string/meters"
             android:inputType="numberDecimal"
             android:minHeight="48dp"
             android:textAlignment="textStart"
+            android:background="@android:drawable/editbox_background"
             app:layout_constraintEnd_toEndOf="parent" />
     </LinearLayout>
     <LinearLayout
@@ -137,10 +140,11 @@
             android:layout_weight="1"
             android:autoSizeTextType="uniform"
             android:ems="10"
-            android:hint="m/s"
+            android:hint="@string/meters_sec"
             android:inputType="numberDecimal"
             android:minHeight="48dp"
             android:textAlignment="textStart"
+            android:background="@android:drawable/editbox_background"
             app:layout_constraintEnd_toEndOf="parent" />
     </LinearLayout>
 
@@ -172,10 +176,11 @@
             android:layout_weight="1"
             android:autoSizeTextType="uniform"
             android:ems="10"
-            android:hint="G7"
+            android:hint="@string/g7"
             android:inputType="numberDecimal"
             android:minHeight="48dp"
             android:textAlignment="textStart"
+            android:background="@android:drawable/editbox_background"
             app:layout_constraintEnd_toEndOf="parent" />
     </LinearLayout>
     <LinearLayout
@@ -201,12 +206,13 @@
 
         <EditText
             android:id="@+id/edit_distance"
-            android:layout_width="0dp"
+            android:layout_width="5dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:autoSizeTextType="uniform"
+            android:background="@android:drawable/editbox_background"
             android:ems="10"
-            android:hint="m"
+            android:hint="@string/meters"
             android:inputType="numberDecimal"
             android:minHeight="48dp"
             android:textAlignment="textStart"
@@ -243,10 +249,11 @@
             android:layout_weight="1"
             android:autoSizeTextType="uniform"
             android:ems="10"
-            android:hint="m/s"
+            android:hint="@string/meters_sec"
             android:inputType="numberDecimal"
             android:minHeight="48dp"
             android:textAlignment="textStart"
+            android:background="@android:drawable/editbox_background"
             app:layout_constraintEnd_toEndOf="parent" />
     </LinearLayout>
 
@@ -279,9 +286,10 @@
             android:layout_weight="1"
             android:autoSizeTextType="uniform"
             android:ems="10"
-            android:hint="degree"
+            android:hint="@string/degree"
             android:inputType="numberDecimal"
             android:minHeight="48dp"
+            android:background="@android:drawable/editbox_background"
             android:textAlignment="textStart"
             app:layout_constraintEnd_toEndOf="parent"
             tools:layout_editor_absoluteY="295dp" />
