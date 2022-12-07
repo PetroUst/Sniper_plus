@@ -7,6 +7,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
     android:elevation="8dp"
+    android:id="@+id/bullet_item"
     app:cardCornerRadius="4dp">
 
     <LinearLayout
@@ -167,7 +168,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.696"
-                tools:ignore="Suspicious0dp" />
+                tools:ignore="Suspicious0dp,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
             <ImageButton
                 android:id="@+id/delete_bullet"
                 android:layout_width="match_parent"
@@ -180,7 +182,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.696"
-                tools:ignore="Suspicious0dp" />
+                tools:ignore="Suspicious0dp,SpeakableTextPresentCheck" />
         </LinearLayout>
     </LinearLayout>
 

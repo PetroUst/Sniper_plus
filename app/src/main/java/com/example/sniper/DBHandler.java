@@ -115,7 +115,9 @@ class DBHandler extends SQLiteOpenHelper {
         if (cursorBullets.moveToFirst()) {
             do {
                 // on below line we are adding the data from cursor to our array list.
-                bulletModelArrayList.add(new BulletModel(cursorBullets.getString(1),
+                // getPosition() відповідає за позицію в списку, getInt(0) за ідентифікатор кулі
+                bulletModelArrayList.add(new BulletModel(cursorBullets.getInt(0),
+                        cursorBullets.getString(1),
                         cursorBullets.getFloat(2),
                         cursorBullets.getFloat(3),
                         cursorBullets.getFloat(4),
@@ -128,13 +130,6 @@ class DBHandler extends SQLiteOpenHelper {
         cursorBullets.close();
         return bulletModelArrayList;
     }
-//    public deleteBullet()
-//    {
-//
-//    }
-
-
-
 }
 
 

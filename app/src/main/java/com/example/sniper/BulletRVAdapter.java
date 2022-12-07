@@ -39,7 +39,8 @@ public class BulletRVAdapter extends RecyclerView.Adapter<BulletRVAdapter.ViewHo
         BulletModel modal = bulletModelArrayList.get(position);
         holder.bulletCalTV.setText(modal.getCaliber());
         holder.bulletG1TV.setText(String.valueOf(modal.getG1()));
-        holder.bulletG7TV.setText(String.valueOf(modal.getG7()));
+//        holder.bulletG7TV.setText(String.valueOf(modal.getG7()));
+        holder.bulletG7TV.setText(String.valueOf(modal.getId()));
         holder.bulletWeightTV.setText(String.valueOf(modal.getWeight()));
         holder.bulletStart_speedTV.setText(String.valueOf(modal.getStart_speed()));
     }
