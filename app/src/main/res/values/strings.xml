@@ -10,4 +10,17 @@
     <string name="horizontal_ukr">Horizontal tolerance: </string>
     <string name="calculate_ukr">Calculate</string>
     <string name="error_Enter_all_data">Enter all data</string>
+
+    <string name="caliber">Enter caliber</string>
+    <string name="weight">Enter weight</string>
+    <string name="BC">Enter BC(G1)</string>
+    <string name="BC_1">Enter BC(G7 if exist)</string>
+    <string name="start_speed">Enter start speed</string>
+    <string name="btn_add">Add</string>
+    <string name="btn_show">Show all</string>
+
+    <string name="meters">  m</string>
+    <string name="meters_sec">  m/s</string>
+    <string name="degree">  degree</string>
+    <string name="g7">  G7</string>
 </resources>
