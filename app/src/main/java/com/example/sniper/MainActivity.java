@@ -27,8 +27,6 @@ import android.widget.AdapterView;
 import android.widget.SimpleCursorAdapter;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-
-//test
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -40,8 +38,8 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
 
-//    private ImageButton settings_button;
-    ImageButton settings_button,map_button;
+    ImageButton settings_button;
+    ImageButton map_button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 

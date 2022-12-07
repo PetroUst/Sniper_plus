@@ -3,6 +3,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,6 +16,7 @@ public class BulletRVAdapter extends RecyclerView.Adapter<BulletRVAdapter.ViewHo
     // variable for our array list and context
     private ArrayList<BulletModel> bulletModelArrayList;
     private Context context;
+
 
     // constructor
     public BulletRVAdapter(ArrayList<BulletModel> bulletModelArrayList, Context context) {
@@ -30,7 +32,6 @@ public class BulletRVAdapter extends RecyclerView.Adapter<BulletRVAdapter.ViewHo
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.bullet_rv_item, parent, false);
         return new BulletRVAdapter.ViewHolder(view);
     }
-
     @Override
     public void onBindViewHolder(@NonNull BulletRVAdapter.ViewHolder holder, int position) {
         // on below line we are setting data
@@ -49,7 +50,6 @@ public class BulletRVAdapter extends RecyclerView.Adapter<BulletRVAdapter.ViewHo
         return bulletModelArrayList.size();
     }
 
-
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         // creating variables for our text views.
@@ -65,5 +65,4 @@ public class BulletRVAdapter extends RecyclerView.Adapter<BulletRVAdapter.ViewHo
             bulletStart_speedTV = itemView.findViewById((R.id.idTVBulletStart_speed));
         }
     }
-
 }

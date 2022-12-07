@@ -128,6 +128,11 @@ class DBHandler extends SQLiteOpenHelper {
         cursorBullets.close();
         return bulletModelArrayList;
     }
+//    public deleteBullet()
+//    {
+//
+//    }
+
 
 
 }

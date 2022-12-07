@@ -1,6 +1,8 @@
 package com.example.sniper;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -20,7 +22,7 @@ public class ViewBullets extends AppCompatActivity {
     private DBHandler dbHandler;
     private BulletRVAdapter bulletRVAdapter;
     private RecyclerView bulletsRV;
-
+    ImageButton select_bullet = (ImageButton)findViewById(R.id.select_bullet);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,5 +46,7 @@ public class ViewBullets extends AppCompatActivity {
 
         // setting our adapter to recycler view.
         bulletsRV.setAdapter(bulletRVAdapter);
+
     }
+
 }

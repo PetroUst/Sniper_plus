@@ -337,7 +337,7 @@
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_weight="0.5"
-
+            android:onClick="move_to_map"
             android:background="@color/Main_Window_Background"
             android:padding="10dp"
             android:scaleType="centerCrop"
