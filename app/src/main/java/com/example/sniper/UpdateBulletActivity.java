@@ -13,7 +13,7 @@ public class UpdateBulletActivity extends AppCompatActivity {
 
     // variables for our edit text, button, strings and dbhandler class.
     private EditText bulletCalEdt, bulletWeightEdt, bulletG1Edt, bulletG7Edt, bulletStartSpeedEdt;
-    private Button updateBulletBtn;
+    private Button updateBulletBtn, deleteBulletBtn;
     private DBHandler dbHandler;
     String bulletCal, bulletWeight, bulletG1, bulletG7, bulletStartSpeed;
 
@@ -30,6 +30,7 @@ public class UpdateBulletActivity extends AppCompatActivity {
         bulletG7Edt = findViewById(R.id.idEdtBulletG7);
         bulletStartSpeedEdt = findViewById(R.id.idEdtBulletStartSpeed);
         updateBulletBtn = findViewById(R.id.idBtnUpdateBullet);
+        deleteBulletBtn = findViewById(R.id.idBtnDelete);
 
         // on below line we are initialing our dbhandler class.
         dbHandler = new DBHandler(UpdateBulletActivity.this);
@@ -68,5 +69,19 @@ public class UpdateBulletActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+
+        // adding on click listener for delete button to delete our course.
+        deleteBulletBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // calling a method to delete our course.
+                dbHandler.deleteBullet(bulletCal);
+                Toast.makeText(UpdateBulletActivity.this, "Deleted bullet", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(UpdateBulletActivity.this, Settings.class);
+                startActivity(i);
+            }
+        });
+
     }
 }

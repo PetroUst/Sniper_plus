@@ -151,6 +151,20 @@ class DBHandler extends SQLiteOpenHelper {
         db.close();
     }
 
+    // below is the method for deleting our course.
+    public void deleteBullet(String bulletCal) {
+
+        // on below line we are creating
+        // a variable to write our database.
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        // on below line we are calling a method to delete our
+        // course and we are comparing it with our course name.
+        db.delete(TABLE_NAME, "caliber=?", new String[]{bulletCal});
+        db.close();
+    }
+
+
 }
 
 
