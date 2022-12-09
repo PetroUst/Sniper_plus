@@ -129,6 +129,27 @@ class DBHandler extends SQLiteOpenHelper {
         return bulletModelArrayList;
     }
 
+    // below is the method for updating our courses
+    public void updateBullet(String originalBulletCal, String bulletCal, Float bulletWeight,
+                             Float bulletG1, Float bulletG7, Float bulletStartSpeed) {
+
+        // calling a method to get writable database.
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        // on below line we are passing all values
+        // along with its key and value pair.
+        values.put(CALIBER_COL, bulletCal);
+        values.put(WEIGHT_COL, bulletWeight);
+        values.put(G1_COL, bulletG1);
+        values.put(G7_COL, bulletG7);
+        values.put(START_SPEED_COL, bulletStartSpeed);
+
+        // on below line we are calling a update method to update our database and passing our values.
+        // and we are comparing it with name of our course which is stored in original name variable.
+        db.update(TABLE_NAME, values, "name=?", new String[]{originalBulletCal});
+        db.close();
+    }
 
 }
 

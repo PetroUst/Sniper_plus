@@ -1,5 +1,6 @@
 package com.example.sniper;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,6 +42,27 @@ public class BulletRVAdapter extends RecyclerView.Adapter<BulletRVAdapter.ViewHo
         holder.bulletG7TV.setText(String.valueOf(modal.getG7()));
         holder.bulletWeightTV.setText(String.valueOf(modal.getWeight()));
         holder.bulletStart_speedTV.setText(String.valueOf(modal.getStart_speed()));
+
+        // below line is to add on click listener for our recycler view item.
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                // on below line we are calling an intent.
+                Intent i = new Intent(context, UpdateBulletActivity.class);
+
+                // below we are passing all our values.
+                i.putExtra("caliber", modal.getCaliber());
+                i.putExtra("weight", modal.getWeight());
+                i.putExtra("G1", modal.getG1());
+                i.putExtra("G7", modal.getG7());
+                i.putExtra("start speed", modal.getStart_speed());
+
+                // starting our activity.
+                context.startActivity(i);
+            }
+        });
+
     }
 
     @Override
@@ -65,5 +87,7 @@ public class BulletRVAdapter extends RecyclerView.Adapter<BulletRVAdapter.ViewHo
             bulletStart_speedTV = itemView.findViewById((R.id.idTVBulletStart_speed));
         }
     }
+
+
 
 }
