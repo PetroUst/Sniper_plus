@@ -15,8 +15,8 @@ public class UpdateBulletActivity extends AppCompatActivity {
     private EditText bulletCalEdt, bulletWeightEdt, bulletG1Edt, bulletG7Edt, bulletStartSpeedEdt;
     private Button updateBulletBtn;
     private DBHandler dbHandler;
-    String bulletCal;
-    Float bulletWeight, bulletG1, bulletG7, bulletStartSpeed;
+    String bulletCal, bulletWeight, bulletG1, bulletG7, bulletStartSpeed;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,19 +37,19 @@ public class UpdateBulletActivity extends AppCompatActivity {
         // on below lines we are getting data which
         // we passed in our adapter class.
         bulletCal = getIntent().getStringExtra("caliber");
-        bulletWeight = Float.valueOf(getIntent().getStringExtra("weight"));
-        bulletG1 = Float.valueOf(getIntent().getStringExtra("G1"));
-        bulletG7 = Float.valueOf(getIntent().getStringExtra("G7"));
-        bulletStartSpeed = Float.valueOf(getIntent().getStringExtra("start speed"));
+        bulletWeight = getIntent().getStringExtra("weight");
+        bulletG1 = getIntent().getStringExtra("G1");
+        bulletG7 = getIntent().getStringExtra("G7");
+        bulletStartSpeed = getIntent().getStringExtra("start speed");
 
 
         // setting data to edit text
         // of our update activity.
-        bulletCalEdt.setText(String.valueOf(bulletCal));
-        bulletWeightEdt.setText(String.valueOf(bulletWeight));
-        bulletG1Edt.setText(String.valueOf(bulletG1));
-        bulletG7Edt.setText(String.valueOf(bulletG7));
-        bulletStartSpeedEdt.setText(String.valueOf(bulletStartSpeed));
+        bulletCalEdt.setText(bulletCal);
+        bulletWeightEdt.setText(bulletWeight);
+        bulletG1Edt.setText(bulletG1);
+        bulletG7Edt.setText(bulletG7);
+        bulletStartSpeedEdt.setText(bulletStartSpeed);
 
         // adding on click listener to our update course button.
         updateBulletBtn.setOnClickListener(new View.OnClickListener() {

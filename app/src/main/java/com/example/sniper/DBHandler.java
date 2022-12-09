@@ -147,7 +147,7 @@ class DBHandler extends SQLiteOpenHelper {
 
         // on below line we are calling a update method to update our database and passing our values.
         // and we are comparing it with name of our course which is stored in original name variable.
-        db.update(TABLE_NAME, values, "name=?", new String[]{originalBulletCal});
+        db.update(TABLE_NAME, values, "caliber=?", new String[]{originalBulletCal});
         db.close();
     }
 
