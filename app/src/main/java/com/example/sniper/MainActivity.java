@@ -1,7 +1,8 @@
 package com.example.sniper;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
+import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
@@ -33,13 +34,22 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
 
     ImageButton settings_button;
     ImageButton map_button;
+    private ArrayList permissionsToRequest;
+    private final ArrayList permissionsRejected = new ArrayList();
+    private ArrayList permissions = new ArrayList();
+
+    private final static int ALL_PERMISSIONS_RESULT = 101;
+    LocationTrack locationTrack;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -84,6 +94,43 @@ public class MainActivity extends AppCompatActivity {
         } catch (Exception ex) {
             Toast.makeText(this, getString(R.string.error_Enter_all_data), Toast.LENGTH_LONG).show();
         }
+//        permissions.add(ACCESS_FINE_LOCATION);
+//        permissions.add(ACCESS_COARSE_LOCATION);
+//
+//        permissionsToRequest = findUnAskedPermissions(permissions);
+//        //get the permissions we have asked for before but are not granted..
+//        //we will store this in a global list to access later.
+//
+//
+//        if (permissionsToRequest.size() > 0)
+//            requestPermissions((String[]) permissionsToRequest.toArray(new String[permissionsToRequest.size()]), ALL_PERMISSIONS_RESULT);
+//
+//
+//        Button btn = (Button) findViewById(R.id.btn);
+//
+//
+//        btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                locationTrack = new LocationTrack(MainActivity.this);
+//
+//                if (locationTrack.canGetLocation()) {
+//
+//
+//                    double longitude = locationTrack.getLongitude();
+//                    double latitude = locationTrack.getLatitude();
+//
+//                    Toast.makeText(getApplicationContext(), "Longitude:" + Double.toString(longitude) + "\nLatitude:" + Double.toString(latitude), Toast.LENGTH_SHORT).show();
+//                    TextView location = (TextView) findViewById(R.id.textView3);
+//                    location.setText("Longitude:" + Double.toString(longitude) + "\nLatitude:" + Double.toString(latitude));
+//                } else {
+//
+//                    locationTrack.showSettingsAlert();
+//                }
+//
+//            }
+//        });
     }
 
     public void move_to_map(View v) {
