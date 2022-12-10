@@ -49,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList permissions = new ArrayList();
 
     private final static int ALL_PERMISSIONS_RESULT = 101;
-    LocationTrack locationTrack;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -133,22 +132,26 @@ public class MainActivity extends AppCompatActivity {
 //        });
     }
 
-    public void move_to_map(View v) {
-        String uri = "http://maps.google.com/maps?daddr=Lviv, Lviv Oblast, Ukraine";
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
-        intent.setPackage("com.google.android.apps.maps");
-        try {
-            startActivity(intent);
-        } catch (ActivityNotFoundException ex) {
-            try {
-                Intent unrestrictedIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
-                startActivity(unrestrictedIntent);
-            } catch (ActivityNotFoundException innerEx) {
-                Toast.makeText(this, "Please install a maps application", Toast.LENGTH_LONG).show();
-            }
-        }
-    }
+//    public void move_to_map(View v) {
+//        String uri = "http://maps.google.com/maps?daddr=Lviv, Lviv Oblast, Ukraine";
+//        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+//        intent.setPackage("com.google.android.apps.maps");
+//        try {
+//            startActivity(intent);
+//        } catch (ActivityNotFoundException ex) {
+//            try {
+//                Intent unrestrictedIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+//                startActivity(unrestrictedIntent);
+//            } catch (ActivityNotFoundException innerEx) {
+//                Toast.makeText(this, "Please install a maps application", Toast.LENGTH_LONG).show();
+//            }
+//        }
+//    }
 
+    public void move_to_map(View v) {
+        Intent intentSettings = new Intent(MainActivity.this, Map.class);
+        startActivity(intentSettings);
+    }
     public void move_to_settings(View v) {
         Intent intentSettings = new Intent(MainActivity.this, Settings.class);
         startActivity(intentSettings);
