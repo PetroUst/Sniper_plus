@@ -165,8 +165,6 @@ public class Map extends FragmentActivity implements OnMapReadyCallback, GoogleM
 
     }
 
-
-
     @Override
     public void onMapLongClick(LatLng latLng) {
         Geocoder geocoder = new Geocoder(getApplicationContext(), Locale.getDefault());
@@ -231,6 +229,8 @@ public class Map extends FragmentActivity implements OnMapReadyCallback, GoogleM
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng,14));
         //Marker mCurrLocationMarker = mMap.addMarker(markerOptions);
         locationTrack = new LocationTrack(Map.this);
+        double target_long = latLng.longitude;
+        double target_lat = latLng.latitude;
 
         if (locationTrack.canGetLocation()) {
             double longitude = locationTrack.getLongitude();
@@ -239,8 +239,8 @@ public class Map extends FragmentActivity implements OnMapReadyCallback, GoogleM
             //mMap.clear();
             mMap.addMarker(new MarkerOptions().position(userLocation));
         }
-
-        Toast.makeText(this, "Location Saved..!", Toast.LENGTH_SHORT).show();
+        Shot.setDistance(target_lat);
+        Toast.makeText(this, Double.toString(target_long)+"  "+Double.toString(target_lat), Toast.LENGTH_SHORT).show();
 
     }
 

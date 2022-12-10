@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
         //дістаю дані з текстових полів на головному екрані
         try {
             EditText distance = (EditText) findViewById(R.id.edit_distance);
+            distance.setText(Double.toString(Shot.getDistance()));
             EditText wind_speed = (EditText) findViewById(R.id.edit_wind_speed);
             EditText wind_degree = (EditText) findViewById(R.id.edit_wind_degree);
             EditText target_height = (EditText) findViewById(R.id.edit_target_height);
