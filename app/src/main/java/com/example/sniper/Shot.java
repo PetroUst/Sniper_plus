@@ -15,7 +15,7 @@ public class Shot {
     private static final double g = 9.80665;
 
     private static boolean error = false;
-
+    public static double getDistance(){return distance;}
 
     public static class Bullet{
         private static double speed;
@@ -38,6 +38,8 @@ public class Shot {
         public static void setBc(double bc) {
             Bullet.bc = bc;
         }
+
+
     }
 
 
