@@ -49,17 +49,16 @@
 
         <activity
             android:name=".Map"
-            android:exported="true">
-            <intent-filter>
-                <action android:name=".Map" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAu7SyZIO8dhiHxJl6XLC_4S_gpW_TjdHM" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
