@@ -27,8 +27,6 @@ import android.widget.AdapterView;
 import android.widget.SimpleCursorAdapter;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-
-//test
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -40,8 +38,8 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
 
-//    private ImageButton settings_button;
-    ImageButton settings_button,map_button;
+    ImageButton settings_button;
+    ImageButton map_button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -55,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void calculate(View v) {
         TextView res_vertical = (TextView) findViewById(R.id.vertical_res);
+        TextView res_horizontal = (TextView) findViewById(R.id.vertical_res2);
         //дістаю дані з текстових полів на головному екрані
         try {
             EditText distance = (EditText) findViewById(R.id.edit_distance);
@@ -67,18 +66,21 @@ public class MainActivity extends AppCompatActivity {
 
             //конвертую строки в дабл і передаю в поля класу shot
             Shot.setDistance(Double.parseDouble(distance.getText().toString()));
-            Shot.setBc(Double.parseDouble(bc.getText().toString()));
-            Shot.setWind_degree(Double.parseDouble(wind_degree.getText().toString()));
-            Shot.setWind_speed(Double.parseDouble(wind_speed.getText().toString()));
-            Shot.setTarget_high(Double.parseDouble(target_height.getText().toString()));
+            Shot.Bullet.setBc(Double.parseDouble(bc.getText().toString()));
+            Shot.setWindDegree(Double.parseDouble(wind_degree.getText().toString()));
+            Shot.setWindSpeed(Double.parseDouble(wind_speed.getText().toString()));
+            Shot.setTargetHeight(Double.parseDouble(target_height.getText().toString()));
 
-            Shot.Bullet.set_weight(0.010866);
-            Shot.Bullet.set_square(0.000048);
-            Shot.Bullet.set_speed(Double.parseDouble(bullet_speed.getText().toString()));
+            Shot.Bullet.setWeight(0.010866);
+            Shot.Bullet.setSquare(0.000048);
+            Shot.Bullet.setSpeed(Double.parseDouble(bullet_speed.getText().toString()));
 
 
-            res_vertical.setText(Double.toString((Shot.correctionV())));
-//        Double.toString(s.calculate_vertical_correction())
+            String verticalC = String.format("%.2f", Shot.correctionV()) + "'";
+            String horizontalC = String.format("%.2f", Shot.correctionH()) + "'";
+
+            res_vertical.setText( verticalC );
+            res_horizontal.setText( horizontalC );
         } catch (Exception ex) {
             Toast.makeText(this, getString(R.string.error_Enter_all_data), Toast.LENGTH_LONG).show();
         }

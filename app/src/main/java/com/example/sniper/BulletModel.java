@@ -11,7 +11,15 @@ public class BulletModel {
 
 
 
-    BulletModel(String caliber, float weight, float G1, float G7, float start_speed){
+    BulletModel(int id, String caliber, float weight, float G1, float G7, float start_speed){
+        this.id = id;
+        this.bulletCal = caliber;
+        this.bulletWeight = weight;
+        this.bulletG1 = G1;
+        this.bulletG7 = G7;
+        this.bulletStart_speed = start_speed;
+    }
+    BulletModel( String caliber, float weight, float G1, float G7, float start_speed){
         this.bulletCal = caliber;
         this.bulletWeight = weight;
         this.bulletG1 = G1;
@@ -66,4 +74,5 @@ public class BulletModel {
     public void setStart_speed(float bulletStart_speed) {
         this.bulletStart_speed = bulletStart_speed;
     }
+
 }
