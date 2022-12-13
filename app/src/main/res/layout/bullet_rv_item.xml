@@ -28,6 +28,31 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/BulletName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="3dp"
+                    android:text="Bullet Name"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/idTVBulletName"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:text=""
+                    android:textColor="@color/black" />
+
+            <!--text view for our course name-->
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
                     android:id="@+id/BulletCal"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"

@@ -1,4 +1,5 @@
 package com.example.sniper;
+
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.SQLException;
@@ -21,11 +22,17 @@ class DBHandler extends SQLiteOpenHelper {
 
     private static final  String TABLE_NAME = "bullet";
 
+    private static final  String TABLE_NAME2 = "calibers";
+
+    private static final String DIAMETER_COL = "diameter";
+
     private static final String ID_COL = "id";
 
-    private static final  String CALIBER_COL = "caliber";
+    private static final String NAME_COL = "name";
 
-    private static final  String WEIGHT_COL = "weight";
+    private static final String CALIBER_COL = "caliber";
+
+    private static final String WEIGHT_COL = "weight";
 
     private static final String G1_COL = "G1";
 
@@ -43,8 +50,9 @@ class DBHandler extends SQLiteOpenHelper {
         // an sqlite query and we are
         // setting our column names
         // along with their data types.
-        String query = "CREATE TABLE " + TABLE_NAME + " ("
+        String query_bullet = "CREATE TABLE " + TABLE_NAME + " ("
                 + ID_COL + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + NAME_COL + " TEXT, "
                 + CALIBER_COL + " TEXT, "
                 + WEIGHT_COL + " REAL,"
                 + G1_COL + " REAL,"
@@ -54,17 +62,38 @@ class DBHandler extends SQLiteOpenHelper {
 
         // at last we are calling a exec sql
         // method to execute above sql query
-        db.execSQL(query);
+        db.execSQL(query_bullet);
 
-        String create_query = "INSERT INTO "+ TABLE_NAME + " (" + CALIBER_COL + ", " + WEIGHT_COL + ", "
-                + G1_COL + ", " + G7_COL + ", " + START_SPEED_COL + ") VALUES ( \".308 Spitzer\", 147,  0.360, 0.180, 850)";
+        String query_cal = "CREATE TABLE " + TABLE_NAME2 + " ("
+                + ID_COL + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + CALIBER_COL + " TEXT, "
+                + DIAMETER_COL + " REAL)"
+                ;
 
+        db.execSQL(query_cal);
+
+        String create_query = "INSERT INTO " + TABLE_NAME + " (" + NAME_COL + ", " + CALIBER_COL + ", " + WEIGHT_COL + ", "
+                + G1_COL + ", " + G7_COL + ", " + START_SPEED_COL + ") VALUES ( \".308 Spitzer test\", \".308\", 147,  0.360, 0.180, 850)";
+        db.execSQL(create_query);
+
+        create_query = "INSERT INTO " + TABLE_NAME + " (" + NAME_COL + ", " + CALIBER_COL + ", " + WEIGHT_COL + ", "
+                + G1_COL + ", " + G7_COL + ", " + START_SPEED_COL + ") VALUES ( \".308 Spitzer test2\", \".308\", 147,  0.360, 0.180, 850)";
+        db.execSQL(create_query);
+
+        create_query = "INSERT INTO " + TABLE_NAME + " (" + NAME_COL + ", " + CALIBER_COL + ", " + WEIGHT_COL + ", "
+                + G1_COL + ", " + G7_COL + ", " + START_SPEED_COL + ") VALUES ( \".408 Spitzer\", \".408\", 147,  0.360, 0.180, 850)";
+        db.execSQL(create_query);
+
+        create_query = "INSERT INTO " + TABLE_NAME2 + " (" + CALIBER_COL + ", " + DIAMETER_COL + ") VALUES (\".308\", 120)";
+        db.execSQL(create_query);
+
+        create_query = "INSERT INTO " + TABLE_NAME2 + " (" + CALIBER_COL + ", " + DIAMETER_COL + ") VALUES (\".408\", 150)";
         db.execSQL(create_query);
 
     }
 
     // this method is use to add new course to our sqlite database.
-    public void addNewBullet(String bulletCal, Float bulletWeight, Float bulletG1, Float bulletG7, Float bulletStart_speed) {
+    public void addNewBullet( String bulletName, String bulletCal, Float bulletWeight, Float bulletG1, Float bulletG7, Float bulletStart_speed) {
 
         // on below line we are creating a variable for
         // our sqlite database and calling writable method
@@ -77,6 +106,7 @@ class DBHandler extends SQLiteOpenHelper {
 
         // on below line we are passing all values
         // along with its key and value pair.
+        values.put(NAME_COL, bulletName);
         values.put(CALIBER_COL, bulletCal);
         values.put(WEIGHT_COL, bulletWeight);
         values.put(G1_COL, bulletG1);
@@ -116,10 +146,11 @@ class DBHandler extends SQLiteOpenHelper {
             do {
                 // on below line we are adding the data from cursor to our array list.
                 bulletModelArrayList.add(new BulletModel(cursorBullets.getString(1),
-                        cursorBullets.getFloat(2),
+                        cursorBullets.getString(2),
                         cursorBullets.getFloat(3),
                         cursorBullets.getFloat(4),
-                        cursorBullets.getFloat(5)));
+                        cursorBullets.getFloat(5),
+                        cursorBullets.getFloat(6)));
             } while (cursorBullets.moveToNext());
             // moving our cursor to next.
         }
@@ -130,7 +161,7 @@ class DBHandler extends SQLiteOpenHelper {
     }
 
     // below is the method for updating our courses
-    public void updateBullet(String originalBulletCal, String bulletCal, Float bulletWeight,
+    public void updateBullet(String originalBulletName, String bulletName, String bulletCal, Float bulletWeight,
                              Float bulletG1, Float bulletG7, Float bulletStartSpeed) {
 
         // calling a method to get writable database.
@@ -139,6 +170,7 @@ class DBHandler extends SQLiteOpenHelper {
 
         // on below line we are passing all values
         // along with its key and value pair.
+        values.put(NAME_COL, bulletName);
         values.put(CALIBER_COL, bulletCal);
         values.put(WEIGHT_COL, bulletWeight);
         values.put(G1_COL, bulletG1);
@@ -147,12 +179,12 @@ class DBHandler extends SQLiteOpenHelper {
 
         // on below line we are calling a update method to update our database and passing our values.
         // and we are comparing it with name of our course which is stored in original name variable.
-        db.update(TABLE_NAME, values, "caliber=?", new String[]{originalBulletCal});
+        db.update(TABLE_NAME, values, "name=?", new String[]{originalBulletName});
         db.close();
     }
 
     // below is the method for deleting our course.
-    public void deleteBullet(String bulletCal) {
+    public void deleteBullet(String bulletName) {
 
         // on below line we are creating
         // a variable to write our database.
@@ -160,10 +192,32 @@ class DBHandler extends SQLiteOpenHelper {
 
         // on below line we are calling a method to delete our
         // course and we are comparing it with our course name.
-        db.delete(TABLE_NAME, "caliber=?", new String[]{bulletCal});
+        db.delete(TABLE_NAME, "name=?", new String[]{bulletName});
         db.close();
     }
 
+    public float useBullet(String bulletCal) {
+
+        // on below line we are creating
+        // a variable to write our database.
+        /*String findSquare = "SELECT * FROM " + TABLE_NAME2
+                + " WHERE " + CALIBER_COL + " = " + bulletCal;
+        Cursor cursor = db.rawQuery(findSquare, null);
+
+        @SuppressLint("Range") float square = cursor.getFloat(cursor.getColumnIndex("square"));
+        db.close();*/
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cC = db.rawQuery("SELECT " + DIAMETER_COL + " FROM " + TABLE_NAME2 +
+                " WHERE " + CALIBER_COL + " = " + "\"" + bulletCal + "\"" , null);
+
+        float ssquare = 0;
+        if (cC != null && cC.moveToFirst()) {
+            ssquare = cC.getFloat(cC.getColumnIndex("diameter"));
+            cC.close();
+        }
+        return ssquare;
+    }
 
 }
 

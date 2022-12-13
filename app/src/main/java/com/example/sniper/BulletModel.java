@@ -1,8 +1,10 @@
 package com.example.sniper;
 
+
 public class BulletModel {
 
     private int id;
+    private String bulletName;
     private String bulletCal;
     private float bulletWeight;
     private float bulletG1;
@@ -11,15 +13,20 @@ public class BulletModel {
 
 
 
-    BulletModel(int id, String caliber, float weight, float G1, float G7, float start_speed){
+    BulletModel(int id, String name, String caliber, float weight, float G1, float G7, float start_speed){
         this.id = id;
+        this.bulletName = name;
         this.bulletCal = caliber;
         this.bulletWeight = weight;
         this.bulletG1 = G1;
         this.bulletG7 = G7;
         this.bulletStart_speed = start_speed;
     }
-    BulletModel( String caliber, float weight, float G1, float G7, float start_speed){
+
+
+
+    BulletModel( String name, String caliber, float weight, float G1, float G7, float start_speed){
+        this.bulletName = name;
         this.bulletCal = caliber;
         this.bulletWeight = weight;
         this.bulletG1 = G1;
@@ -33,6 +40,14 @@ public class BulletModel {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return bulletName;
+    }
+
+    public void setName(String bulletName) {
+        this.bulletName = bulletName;
     }
 
     public String getCaliber() {

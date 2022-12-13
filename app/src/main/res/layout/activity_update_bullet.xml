@@ -7,8 +7,15 @@
     android:orientation="vertical"
     tools:context=".UpdateBulletActivity">
 
+    <!--edit text to enter bullet name-->
+    <EditText
+        android:id="@+id/idEdtBulletName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="Enter bullet name" />
 
-    <!--edit text to enter course duration-->
+    <!--edit text to enter bullet caliber-->
     <EditText
         android:id="@+id/idEdtBulletCaliber"
         android:layout_width="match_parent"
@@ -16,7 +23,7 @@
         android:layout_margin="10dp"
         android:hint="Enter bullet caliber" />
 
-    <!--edit text to display course tracks-->
+    <!--edit text to display bullet weight-->
     <EditText
         android:id="@+id/idEdtBulletWeight"
         android:layout_width="match_parent"
@@ -24,7 +31,7 @@
         android:layout_margin="10dp"
         android:hint="Enter bullet weight" />
 
-    <!--edit text for course description-->
+    <!--edit text for bullet G1-->
     <EditText
         android:id="@+id/idEdtBulletG1"
         android:layout_width="match_parent"
@@ -32,7 +39,7 @@
         android:layout_margin="10dp"
         android:hint="Enter bullet G1" />
 
-    <!--edit text for course description-->
+    <!--edit text for G7-->
     <EditText
         android:id="@+id/idEdtBulletG7"
         android:layout_width="match_parent"
@@ -40,7 +47,7 @@
         android:layout_margin="10dp"
         android:hint="Enter bullet G7" />
 
-    <!--edit text for course description-->
+    <!--edit text for start speed-->
     <EditText
         android:id="@+id/idEdtBulletStartSpeed"
         android:layout_width="match_parent"
@@ -48,7 +55,7 @@
         android:layout_margin="10dp"
         android:hint="Enter bullet start speed" />
 
-    <!--button for updating our course-->
+    <!--button for updating bullet-->
     <Button
         android:id="@+id/idBtnUpdateBullet"
         android:layout_width="match_parent"
@@ -57,13 +64,22 @@
         android:text="Update bulllet"
         android:textAllCaps="false" />
 
-    <!--button for deleting our course-->
+    <!--button for deleting bullet-->
     <Button
         android:id="@+id/idBtnDelete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:text="Delete bullet"
+        android:textAllCaps="false" />
+
+    <!--button for using bullet-->
+    <Button
+        android:id="@+id/idBtnUse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Use bullet"
         android:textAllCaps="false" />
 
 </LinearLayout>

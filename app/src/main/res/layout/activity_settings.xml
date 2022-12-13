@@ -9,6 +9,13 @@
     android:background="@color/Main_Window_Background"
     tools:context=".Settings">
 
+    <EditText
+        android:id="@+id/Edit_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/editbox_background"
+        android:hint="Enter name"
+        android:padding="12dp" />
 
     <EditText
         android:id="@+id/Edit_caliber"
