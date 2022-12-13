@@ -4,7 +4,7 @@ import java.lang.Math;
 
 public class Shot {
     private static double height;
-    private static double distance;
+    private static double distance = 0;
     private static double targetHeight;
     private static double windSpeed = 0.000001;
     private static double windDegree;

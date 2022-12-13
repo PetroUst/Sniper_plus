@@ -57,7 +57,7 @@ public class Map extends FragmentActivity implements OnMapReadyCallback, GoogleM
     LocationManager locationManager;
     LocationListener locationListener;
     LocationTrack locationTrack;
-
+    double distance;
 
     public void centreMapOnLocation(Location location, String title){
 
@@ -112,11 +112,11 @@ public class Map extends FragmentActivity implements OnMapReadyCallback, GoogleM
         mMap.setOnMapLongClickListener(this);
         //mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
         GoogleMapOptions options = new GoogleMapOptions();
-        options.mapType(GoogleMap.MAP_TYPE_SATELLITE)
+        options.mapType(GoogleMap.MAP_TYPE_HYBRID)
                 .compassEnabled(false)
                 .rotateGesturesEnabled(false)
                 .tiltGesturesEnabled(false);
-        mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+        mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
         Intent intent = getIntent();
         if (intent.getIntExtra("Place Number",0) == 0 ){
 
@@ -222,26 +222,30 @@ public class Map extends FragmentActivity implements OnMapReadyCallback, GoogleM
         markerOptions.position(latLng);
         mMap.clear();
         markerOptions.title(String.valueOf(latLng));
-        markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.nntitled));
+        markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.small));
         markerOptions.getPosition();
         mMap.clear();
         mMap.addMarker(markerOptions);
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng,14));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng,16));
         //Marker mCurrLocationMarker = mMap.addMarker(markerOptions);
         locationTrack = new LocationTrack(Map.this);
         double target_long = latLng.longitude;
         double target_lat = latLng.latitude;
-
         if (locationTrack.canGetLocation()) {
             double longitude = locationTrack.getLongitude();
             double latitude = locationTrack.getLatitude();
             LatLng userLocation = new LatLng(latitude,longitude);
             //mMap.clear();
             mMap.addMarker(new MarkerOptions().position(userLocation));
-        }
-        Shot.setDistance(target_lat);
-        Toast.makeText(this, Double.toString(target_long)+"  "+Double.toString(target_lat), Toast.LENGTH_SHORT).show();
+            distance=2*6371*Math.asin(Math.sqrt
+                    (Math.pow(Math.sin((Math.toRadians(target_lat)-Math.toRadians(latitude))/2),2)+
+                    Math.cos(Math.toRadians(latitude))*Math.cos(Math.toRadians(target_lat))*Math.pow(Math.sin((Math.toRadians(target_long)-Math.toRadians(longitude))/2),2)));
 
+
+        }
+        distance*=1000;
+        Shot.setDistance(distance);
+        Toast.makeText(this, "Distance: "+Double.toString(distance)+" m", Toast.LENGTH_SHORT).show();
     }
 
     @Override

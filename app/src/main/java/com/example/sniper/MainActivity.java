@@ -58,6 +58,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
+        if(Shot.getDistance()!=0)
+        {
+            EditText distance = (EditText) findViewById(R.id.edit_distance);
+            distance.setText(Double.toString(Shot.getDistance()));
+        }
     }
 
     public void calculate(View v) {
