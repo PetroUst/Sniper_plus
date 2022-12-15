@@ -61,6 +61,17 @@ public class UpdateBulletActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                Float sq = dbHandler.useBullet(bulletCal);
+
+                if (sq == 0){
+                    Toast.makeText(UpdateBulletActivity.this, "There is no such caliber", Toast.LENGTH_SHORT).show();
+                return;}
+
+                String check = dbHandler.checkBulletName(bulletName);
+                if ((!check.isEmpty() && bulletName.equals(bulletNameEdt.getText().toString())) || check.isEmpty()){
+                    Toast.makeText(UpdateBulletActivity.this, "A bullet with that name already exists", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 // inside this method we are calling an update course
                 // method and passing all our edit text values.
                 dbHandler.updateBullet(bulletName, bulletNameEdt.getText().toString(), bulletCalEdt.getText().toString(), Float.valueOf(bulletWeightEdt.getText().toString()), Float.valueOf(bulletG1Edt.getText().toString()), Float.valueOf(bulletG7Edt.getText().toString()), Float.valueOf(bulletStartSpeedEdt.getText().toString()));
@@ -71,6 +82,7 @@ public class UpdateBulletActivity extends AppCompatActivity {
                 // launching our main activity.
                 Intent i = new Intent(UpdateBulletActivity.this, Settings.class);
                 startActivity(i);
+
             }
         });
 
@@ -92,7 +104,10 @@ public class UpdateBulletActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
             Float sq = dbHandler.useBullet(bulletCal);
-            String sqshow = "square = " + sq;
+                if (sq == 0){
+                    Toast.makeText(UpdateBulletActivity.this, "There is no such caliber", Toast.LENGTH_SHORT).show();
+                    return;}
+                String sqshow = "square = " + sq;
             Toast.makeText(UpdateBulletActivity.this, sqshow, Toast.LENGTH_SHORT).show();
 
             }

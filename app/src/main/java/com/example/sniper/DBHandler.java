@@ -196,16 +196,21 @@ class DBHandler extends SQLiteOpenHelper {
         db.close();
     }
 
+    public String checkBulletName(String bulletName) {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cC = db.rawQuery("SELECT " + NAME_COL + " FROM " + TABLE_NAME +
+                " WHERE " + NAME_COL + " = " + "\"" + bulletName + "\"" , null);
+
+        String ssquare = "";
+        if (cC != null && cC.moveToFirst()) {
+            ssquare = cC.getString(cC.getColumnIndex("name"));
+            cC.close();
+        }
+        return ssquare;
+    }
+
     public float useBullet(String bulletCal) {
-
-        // on below line we are creating
-        // a variable to write our database.
-        /*String findSquare = "SELECT * FROM " + TABLE_NAME2
-                + " WHERE " + CALIBER_COL + " = " + bulletCal;
-        Cursor cursor = db.rawQuery(findSquare, null);
-
-        @SuppressLint("Range") float square = cursor.getFloat(cursor.getColumnIndex("square"));
-        db.close();*/
 
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cC = db.rawQuery("SELECT " + DIAMETER_COL + " FROM " + TABLE_NAME2 +

@@ -36,6 +36,20 @@ public class Settings extends AppCompatActivity {
             Toast.makeText(Settings.this, "Please enter all the data..", Toast.LENGTH_SHORT).show();
             return;
         }
+
+        Float sq = dbHandler.useBullet(BulletCal);
+
+        if (sq == 0){
+            Toast.makeText(Settings.this, "There is no such caliber", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        String check = dbHandler.checkBulletName(BulletName);
+        if (!check.isEmpty()){
+            Toast.makeText(Settings.this, "A bullet with that name already exists", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         dbHandler.addNewBullet(BulletName, BulletCal, BulletWeight, BulletG1, BulletG7, BulletStart_speed);
         Toast.makeText(Settings.this, "Bullet has been added.", Toast.LENGTH_SHORT).show();
         BulletNameEdt.setText("");
