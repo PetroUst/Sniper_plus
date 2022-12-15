@@ -68,7 +68,7 @@ public class UpdateBulletActivity extends AppCompatActivity {
                 return;}
 
                 String check = dbHandler.checkBulletName(bulletName);
-                if ((!check.isEmpty() && bulletName.equals(bulletNameEdt.getText().toString())) || check.isEmpty()){
+                if ((!check.isEmpty() && !bulletName.equals(bulletNameEdt.getText().toString())) || check.isEmpty()){
                     Toast.makeText(UpdateBulletActivity.this, "A bullet with that name already exists", Toast.LENGTH_SHORT).show();
                     return;
                 }
