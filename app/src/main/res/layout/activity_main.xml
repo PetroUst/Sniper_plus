@@ -337,6 +337,8 @@
             app:srcCompat="@drawable/flagqqw" />
     </LinearLayout>
 
+
+
     <LinearLayout
         android:id="@+id/buttonsEvery"
         android:layout_width="match_parent"
