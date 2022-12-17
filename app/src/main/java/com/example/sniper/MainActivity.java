@@ -3,6 +3,8 @@ package com.example.sniper;
 import androidx.appcompat.app.AppCompatActivity;
 import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
+
+import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
@@ -42,8 +44,8 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
 
-    ImageButton settings_button;
-    ImageButton map_button;
+    ImageButton settings_button,map_button;
+    EditText distance,wind_speed,wind_degree,target_height;
     private ArrayList permissionsToRequest;
     private final ArrayList permissionsRejected = new ArrayList();
     private ArrayList permissions = new ArrayList();
@@ -58,37 +60,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
-        if(Shot.getDistance()!=0)
-        {
-            EditText distance = (EditText) findViewById(R.id.edit_distance);
-            distance.setText(Double.toString(Shot.getDistance()));
-        }
+        distance = (EditText) findViewById(R.id.edit_distance);
+        wind_speed = (EditText) findViewById(R.id.edit_wind_speed);
+        wind_degree = (EditText) findViewById(R.id.edit_wind_degree);
+        target_height = (EditText) findViewById(R.id.edit_target_height);
     }
-
     public void calculate(View v) {
+
         TextView res_vertical = (TextView) findViewById(R.id.vertical_res);
         TextView res_horizontal = (TextView) findViewById(R.id.vertical_res2);
         //дістаю дані з текстових полів на головному екрані
         try {
-            EditText distance = (EditText) findViewById(R.id.edit_distance);
-            distance.setText(Double.toString(Shot.getDistance()));
-            EditText wind_speed = (EditText) findViewById(R.id.edit_wind_speed);
-            EditText wind_degree = (EditText) findViewById(R.id.edit_wind_degree);
-            EditText target_height = (EditText) findViewById(R.id.edit_target_height);
-            EditText bullet_speed = (EditText) findViewById(R.id.edit_bullet_speed);
-            EditText bc = (EditText) findViewById(R.id.edit_bc);
-
-
             //конвертую строки в дабл і передаю в поля класу shot
             Shot.setDistance(Double.parseDouble(distance.getText().toString()));
-            Shot.Bullet.setBc(Double.parseDouble(bc.getText().toString()));
             Shot.setWindDegree(Double.parseDouble(wind_degree.getText().toString()));
             Shot.setWindSpeed(Double.parseDouble(wind_speed.getText().toString()));
             Shot.setTargetHeight(Double.parseDouble(target_height.getText().toString()));
 
-            Shot.Bullet.setWeight(0.010866);
-            Shot.Bullet.setSquare(0.000048);
-            Shot.Bullet.setSpeed(Double.parseDouble(bullet_speed.getText().toString()));
 
 
             String verticalC = String.format("%.2f", Shot.correctionV()) + "'";
@@ -156,11 +144,19 @@ public class MainActivity extends AppCompatActivity {
 
     public void move_to_map(View v) {
         Intent intentSettings = new Intent(MainActivity.this, Map.class);
-        startActivity(intentSettings);
+        startActivityForResult(intentSettings,1);
     }
     public void move_to_settings(View v) {
         Intent intentSettings = new Intent(MainActivity.this, Settings.class);
         startActivity(intentSettings);
+        onResume();
+    }
+    @SuppressLint("MissingSuperCall")
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (data == null) {return;}
+        String res = data.getStringExtra("distanse");
+        distance.setText(res);
     }
 
 }

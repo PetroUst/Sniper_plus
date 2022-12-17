@@ -244,8 +244,12 @@ public class Map extends FragmentActivity implements OnMapReadyCallback, GoogleM
 
         }
         distance*=1000;
-        Shot.setDistance(distance);
+//        Shot.setDistance(distance);
+
         Toast.makeText(this, "Distance: "+Double.toString(distance)+" m", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent();
+        intent.putExtra("distanse",(String.format("%.2f",distance).replace(',','.')));
+        setResult(RESULT_OK,intent);
     }
 
     @Override

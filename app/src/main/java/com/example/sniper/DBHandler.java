@@ -1,18 +1,11 @@
 package com.example.sniper;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.database.Cursor;
-import android.database.SQLException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase;
 import android.content.Context;
-import android.util.Log;
-
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.util.ArrayList;
 
 class DBHandler extends SQLiteOpenHelper {
@@ -84,7 +77,7 @@ class DBHandler extends SQLiteOpenHelper {
                 + G1_COL + ", " + G7_COL + ", " + START_SPEED_COL + ") VALUES ( \".408 Spitzer\", \".408\", 147,  0.360, 0.180, 850)";
         db.execSQL(create_query);
 
-        create_query = "INSERT INTO " + TABLE_NAME2 + " (" + CALIBER_COL + ", " + DIAMETER_COL + ") VALUES (\".308\", 120)";
+        create_query = "INSERT INTO " + TABLE_NAME2 + " (" + CALIBER_COL + ", " + DIAMETER_COL + ") VALUES (\".308\", 7.82)";
         db.execSQL(create_query);
 
         create_query = "INSERT INTO " + TABLE_NAME2 + " (" + CALIBER_COL + ", " + DIAMETER_COL + ") VALUES (\".408\", 150)";
@@ -196,6 +189,7 @@ class DBHandler extends SQLiteOpenHelper {
         db.close();
     }
 
+    @SuppressLint("Range")
     public String checkBulletName(String bulletName) {
 
         SQLiteDatabase db = this.getWritableDatabase();
@@ -210,6 +204,7 @@ class DBHandler extends SQLiteOpenHelper {
         return ssquare;
     }
 
+    @SuppressLint("Range")
     public float useBullet(String bulletCal) {
 
         SQLiteDatabase db = this.getWritableDatabase();

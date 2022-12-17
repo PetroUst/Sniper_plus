@@ -108,13 +108,18 @@ public class UpdateBulletActivity extends AppCompatActivity {
         useBulletBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            Float sq = dbHandler.useBullet(bulletCal);
+                double sq = Math.pow(dbHandler.useBullet(bulletCal)/1000,2)*Math.PI/4;
+
                 if (sq == 0){
                     Toast.makeText(UpdateBulletActivity.this, "There is no such caliber", Toast.LENGTH_SHORT).show();
                     return;}
+
                 String sqshow = "square = " + sq;
             Toast.makeText(UpdateBulletActivity.this, sqshow, Toast.LENGTH_SHORT).show();
-
+            Shot.Bullet.setBc(Double.parseDouble(bulletG1));
+            Shot.Bullet.setSquare(sq);
+            Shot.Bullet.setWeight(Double.parseDouble(bulletWeight));
+            Shot.Bullet.setSpeed(Double.parseDouble(bulletStartSpeed));
             }
         });
 

@@ -39,9 +39,22 @@ public class Shot {
             Bullet.bc = bc;
         }
 
+        public static double getSpeed() {
+            return speed;
+        }
 
+        public static double getSquare() {
+            return square;
+        }
+
+        public static double getBc() {
+            return bc;
+        }
+
+        public static double getWeight() {
+            return weight;
+        }
     }
-
 
     public static void setTargetHeight(double targetHeight) {
         Shot.targetHeight = targetHeight;
@@ -50,7 +63,6 @@ public class Shot {
             Shot.targetHeight = 0.01;
         }
     }
-
 
     public static void setHeight(double height){
         Shot.height = height;

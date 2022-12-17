@@ -64,7 +64,8 @@ public class Settings extends AppCompatActivity {
             BulletG7Edt.setText("");
             BulletG1Edt.setText("");
             BulletWeightEdt.setText("");
-            BulletWeightEdt.setText("");
+            BulletStart_speedEdt.setText("");
+
         }
         catch (Exception e) {
             Toast.makeText(Settings.this, "Check inputs and try again", Toast.LENGTH_SHORT).show();
