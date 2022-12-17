@@ -25,18 +25,18 @@ public class Settings extends AppCompatActivity {
         BulletStart_speedEdt = findViewById(R.id.Edit_start_speed);
     }
     public void addBullet(View v) {
-
+        Float BulletG7;
         try {
             String BulletName = BulletNameEdt.getText().toString();
             String BulletCal = BulletCalEdt.getText().toString();
             Float BulletWeight = Float.valueOf(BulletWeightEdt.getText().toString());
             Float BulletG1 = Float.valueOf(BulletG1Edt.getText().toString());
-            Float BulletG7 = Float.valueOf(BulletG7Edt.getText().toString());
-            Float BulletStart_speed = Float.valueOf(BulletStart_speedEdt.getText().toString());
-
-            if (BulletG7 == null) {
+            try {
+                BulletG7 = Float.valueOf(BulletG7Edt.getText().toString());
+            } catch (Exception e){
                 BulletG7 = 0.0f;
             }
+            Float BulletStart_speed = Float.valueOf(BulletStart_speedEdt.getText().toString());
 
             if (BulletName.isEmpty() || BulletCal.isEmpty() || BulletWeight == null || BulletG1 == null || BulletStart_speed == null) {
                 Toast.makeText(Settings.this, "Please enter all the data..", Toast.LENGTH_SHORT).show();
