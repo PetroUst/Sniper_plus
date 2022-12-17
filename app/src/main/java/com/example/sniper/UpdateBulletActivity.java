@@ -72,16 +72,21 @@ public class UpdateBulletActivity extends AppCompatActivity {
                     Toast.makeText(UpdateBulletActivity.this, "A bullet with that name already exists", Toast.LENGTH_SHORT).show();
                     return;
                 }
+
                 // inside this method we are calling an update course
                 // method and passing all our edit text values.
-                dbHandler.updateBullet(bulletName, bulletNameEdt.getText().toString(), bulletCalEdt.getText().toString(), Float.valueOf(bulletWeightEdt.getText().toString()), Float.valueOf(bulletG1Edt.getText().toString()), Float.valueOf(bulletG7Edt.getText().toString()), Float.valueOf(bulletStartSpeedEdt.getText().toString()));
+                try {
+                    dbHandler.updateBullet(bulletName, bulletNameEdt.getText().toString(), bulletCalEdt.getText().toString(), Float.valueOf(bulletWeightEdt.getText().toString()), Float.valueOf(bulletG1Edt.getText().toString()), Float.valueOf(bulletG7Edt.getText().toString()), Float.valueOf(bulletStartSpeedEdt.getText().toString()));
 
-                // displaying a toast message that our course has been updated.
-                Toast.makeText(UpdateBulletActivity.this, "Bullet updated..", Toast.LENGTH_SHORT).show();
+                    // displaying a toast message that our course has been updated.
+                    Toast.makeText(UpdateBulletActivity.this, "Bullet updated..", Toast.LENGTH_SHORT).show();
 
-                // launching our main activity.
-                Intent i = new Intent(UpdateBulletActivity.this, Settings.class);
-                startActivity(i);
+                    // launching our main activity.
+                    Intent i = new Intent(UpdateBulletActivity.this, Settings.class);
+                    startActivity(i);
+                } catch (Exception e) {
+                    Toast.makeText(UpdateBulletActivity.this, "Check inputs and try again", Toast.LENGTH_SHORT).show();
+                }
 
             }
         });
