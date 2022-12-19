@@ -64,12 +64,12 @@ public class UpdateBulletActivity extends AppCompatActivity {
                 Float sq = dbHandler.useBullet(bulletCal);
 
                 if (sq == 0){
-                    Toast.makeText(UpdateBulletActivity.this, "There is no such caliber", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UpdateBulletActivity.this, getString(R.string.no_caliber), Toast.LENGTH_SHORT).show();
                 return;}
 
                 String check = dbHandler.checkBulletName(bulletName);
                 if ((!check.isEmpty() && !bulletName.equals(bulletNameEdt.getText().toString())) || check.isEmpty()){
-                    Toast.makeText(UpdateBulletActivity.this, "A bullet with that name already exists", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UpdateBulletActivity.this, getString(R.string.bullet_exist), Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -79,13 +79,13 @@ public class UpdateBulletActivity extends AppCompatActivity {
                     dbHandler.updateBullet(bulletName, bulletNameEdt.getText().toString(), bulletCalEdt.getText().toString(), Float.valueOf(bulletWeightEdt.getText().toString()), Float.valueOf(bulletG1Edt.getText().toString()), Float.valueOf(bulletG7Edt.getText().toString()), Float.valueOf(bulletStartSpeedEdt.getText().toString()));
 
                     // displaying a toast message that our course has been updated.
-                    Toast.makeText(UpdateBulletActivity.this, "Bullet updated..", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UpdateBulletActivity.this, getString(R.string.bullet_upd), Toast.LENGTH_SHORT).show();
 
                     // launching our main activity.
                     Intent i = new Intent(UpdateBulletActivity.this, Settings.class);
                     startActivity(i);
                 } catch (Exception e) {
-                    Toast.makeText(UpdateBulletActivity.this, "Check inputs and try again", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UpdateBulletActivity.this, getString(R.string.check_inputs), Toast.LENGTH_SHORT).show();
                 }
 
 
@@ -99,7 +99,7 @@ public class UpdateBulletActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // calling a method to delete our course.
                 dbHandler.deleteBullet(bulletName);
-                Toast.makeText(UpdateBulletActivity.this, "Deleted bullet", Toast.LENGTH_SHORT).show();
+                Toast.makeText(UpdateBulletActivity.this, getString(R.string.bullet_del), Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(UpdateBulletActivity.this, Settings.class);
                 startActivity(i);
             }
@@ -112,10 +112,10 @@ public class UpdateBulletActivity extends AppCompatActivity {
                 double sq = Math.pow(dbHandler.useBullet(bulletCal)/1000,2)*Math.PI/4;
 
                 if (sq == 0){
-                    Toast.makeText(UpdateBulletActivity.this, "There is no such caliber", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UpdateBulletActivity.this, getString(R.string.no_caliber), Toast.LENGTH_SHORT).show();
                     return;}
 
-                String sqshow = "square = " + sq;
+                String sqshow = getString(R.string.square) + sq;
             Toast.makeText(UpdateBulletActivity.this, sqshow, Toast.LENGTH_SHORT).show();
             /*
             Shot.Bullet.setBc(Double.parseDouble(bulletG1));

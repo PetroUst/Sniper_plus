@@ -10,4 +10,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name= "Main_Window_Background">#D6EBFF</color>
     <color name="sniper_icon_background">#FF000000</color>
+    <color name="blue">#05288F</color>
+    <color name="grey">#B6B8BB</color>
+    <color name="light_grey">#C7DBED</color>
 </resources>

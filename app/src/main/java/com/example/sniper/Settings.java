@@ -39,7 +39,7 @@ public class Settings extends AppCompatActivity {
             Float BulletStart_speed = Float.valueOf(BulletStart_speedEdt.getText().toString());
 
             if (BulletName.isEmpty() || BulletCal.isEmpty() || BulletWeight == null || BulletG1 == null || BulletStart_speed == null) {
-                Toast.makeText(Settings.this, "Please enter all the data..", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Settings.this, getString(R.string.enter_data), Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -47,18 +47,18 @@ public class Settings extends AppCompatActivity {
             Float sq = dbHandler.useBullet(BulletCal);
 
             if (sq == 0) {
-                Toast.makeText(Settings.this, "There is no such caliber", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Settings.this, getString(R.string.no_caliber), Toast.LENGTH_SHORT).show();
                 return;
             }
 
             String check = dbHandler.checkBulletName(BulletName);
             if (!check.isEmpty()) {
-                Toast.makeText(Settings.this, "A bullet with that name already exists", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Settings.this, getString(R.string.bullet_exist), Toast.LENGTH_SHORT).show();
                 return;
             }
 
             dbHandler.addNewBullet(BulletName, BulletCal, BulletWeight, BulletG1, BulletG7, BulletStart_speed);
-            Toast.makeText(Settings.this, "Bullet has been added.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Settings.this, getString(R.string.bullet_added), Toast.LENGTH_SHORT).show();
             BulletNameEdt.setText("");
             BulletCalEdt.setText("");
             BulletG7Edt.setText("");
@@ -68,7 +68,7 @@ public class Settings extends AppCompatActivity {
 
         }
         catch (Exception e) {
-            Toast.makeText(Settings.this, "Check inputs and try again", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Settings.this, getString(R.string.check_inputs), Toast.LENGTH_SHORT).show();
         }
     }
 

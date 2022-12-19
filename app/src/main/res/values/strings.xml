@@ -6,12 +6,13 @@
     <string name="bullet_speed_ukr">Bullet speed</string>
     <string name="target_height_ukr">Target height</string>
     <string name="balistic_coefficient_ukr">Balistic coefficient</string>
-    <string name="vertical_ukr">Vertical tolerance: </string>
-    <string name="horizontal_ukr">Horizontal tolerance: </string>
+    <string name="vertical_ukr">Vertical correction: </string>
+    <string name="horizontal_ukr">Horizontal correction: </string>
     <string name="calculate_ukr">Calculate</string>
     <string name="error_Enter_all_data">Enter all data</string>
 
     <string name="caliber">Enter caliber</string>
+    <string name="name">Enter name</string>
     <string name="weight">Enter weight</string>
     <string name="BC">Enter BC(G1)</string>
     <string name="BC_1">Enter BC(G7 if exist)</string>
@@ -23,4 +24,34 @@
     <string name="meters_sec">  m/s</string>
     <string name="degree">  hours</string>
     <string name="g7">  G7</string>
+
+    <string name="EBN">Enter bullet name</string>
+    <string name="EBC">Enter bullet caliber</string>
+    <string name="EBW">Enter bullet weight</string>
+    <string name="EBG1">Enter bullet G1</string>
+    <string name="EBG7">Enter bullet G7</string>
+    <string name="EBSS">Enter bullet start speed</string>
+    <string name="UB">Update bullet</string>
+    <string name="DB">Delete bullet</string>
+    <string name="use_B">Use bullet</string>
+
+    <string name="provider">No service provider is available</string>
+    <string name="wind_dir_error">Enter the wind direction correctly</string>
+    <string name="enter_data">Please enter all data... </string>
+    <string name="no_caliber">There is no such caliber </string>
+    <string name="bullet_exist">A bullet with that name already exists </string>
+    <string name="bullet_added">Bullet has been added. </string>
+    <string name="bullet_upd">Bullet has been updated. </string>
+    <string name="bullet_del">Bullet has been deleted. </string>
+    <string name="check_inputs">Check inputs and try again </string>
+    <string name="square">square = </string>
+
+    <string name="BN">Bullet name</string>
+    <string name="BCal">Bullet caliber</string>
+    <string name="BW">Bullet weight</string>
+    <string name="BG1">Bullet G1</string>
+    <string name="BG7">Bullet G7</string>
+    <string name="BSS">Bullet start speed</string>
+
+
 </resources>

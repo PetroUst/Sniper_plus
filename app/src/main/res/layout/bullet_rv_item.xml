@@ -35,7 +35,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:padding="3dp"
-                    android:text="Bullet Name"
+                    android:text="@string/BN"
                     android:textColor="@color/black" />
 
                 <TextView
@@ -61,7 +61,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:padding="3dp"
-                    android:text="Bullet Caliber"
+                    android:text="@string/BCal"
                     android:textColor="@color/black" />
 
                 <TextView
@@ -88,7 +88,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:padding="3dp"
-                    android:text="Bullet G1"
+                    android:text="@string/BG1"
                     android:textColor="@color/black" />
 
 
@@ -117,7 +117,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:padding="3dp"
-                    android:text="Bullet G7"
+                    android:text="@string/BG7"
                     android:textColor="@color/black" />
 
 
@@ -145,7 +145,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:padding="3dp"
-                    android:text="Bullet weight"
+                    android:text="@string/BW"
                     android:textColor="@color/black" />
                 <TextView
                     android:id="@+id/idTVBulletWeight"
@@ -169,7 +169,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:padding="3dp"
-                    android:text="Bullet start speed"
+                    android:text="@string/BSS"
                     android:textColor="@color/black" />
                 <TextView
                     android:id="@+id/idTVBulletStart_speed"

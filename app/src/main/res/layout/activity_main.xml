@@ -21,30 +21,30 @@
         android:orientation="horizontal"
         android:padding="5dp"
         app:layout_constraintTop_toTopOf="parent">
-    <TextView
-        android:id="@+id/vertical"
-        android:layout_width="0dp"
-        android:gravity="center|left"
-        android:layout_height="match_parent"
-        android:layout_weight="2"
-        android:fontFamily="@font/light"
-        android:text="@string/vertical_ukr"
-        android:textColor="#000000"
-        android:minHeight="48dp"
-        android:textSize="20sp"></TextView>
-    <TextView
-        android:id="@+id/vertical_res"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="match_parent"
-        android:fontFamily="@font/light"
-        android:minHeight="48dp"
-        android:gravity="center_horizontal|center_vertical"
-        android:text="0.0"
-        android:background="@android:drawable/editbox_background"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="20sp"></TextView>
+        <TextView
+            android:id="@+id/vertical"
+            android:layout_width="0dp"
+            android:gravity="center|start"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:fontFamily="@font/light"
+            android:text="@string/vertical_ukr"
+            android:textColor="#000000"
+            android:minHeight="48dp"
+            android:textSize="20sp"></TextView>
+        <TextView
+            android:id="@+id/vertical_res"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/light"
+            android:minHeight="48dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="0.0"
+            android:background="@android:drawable/editbox_background"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="20sp"></TextView>
     </LinearLayout>
     <LinearLayout
         android:id="@+id/horizontalLayout"
@@ -53,30 +53,30 @@
         android:orientation="horizontal"
         android:padding="5dp"
         app:layout_constraintTop_toBottomOf="@id/verticalLayout">
-    <TextView
-        android:id="@+id/vertical2"
-        android:layout_width="0dp"
-        android:gravity="center|left"
-        android:layout_height="match_parent"
-        android:layout_weight="2"
-        android:fontFamily="@font/light"
-        android:minHeight="48dp"
-        android:text="@string/horizontal_ukr"
-        android:textColor="#000000"
-        android:textSize="20sp" />
+        <TextView
+            android:id="@+id/vertical2"
+            android:layout_width="0dp"
+            android:gravity="center|left"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:fontFamily="@font/light"
+            android:minHeight="48dp"
+            android:text="@string/horizontal_ukr"
+            android:textColor="#000000"
+            android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/vertical_res2"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="match_parent"
-        android:fontFamily="@font/light"
-        android:gravity="center_horizontal|center_vertical"
-        android:text="0.0"
-        android:background="@android:drawable/editbox_background"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="20sp"></TextView>
+        <TextView
+            android:id="@+id/vertical_res2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/light"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="0.0"
+            android:background="@android:drawable/editbox_background"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="20sp"></TextView>
     </LinearLayout>
 
     <LinearLayout
@@ -116,78 +116,6 @@
             android:background="@android:drawable/editbox_background"
             app:layout_constraintEnd_toEndOf="parent" />
     </LinearLayout>
-<!--    <LinearLayout-->
-<!--        android:id="@+id/bulletSpeedLayout"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="horizontal"-->
-<!--        android:padding="5dp"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/targetHeightLayout">-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/bullet_speed"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="2"-->
-<!--            android:fontFamily="@font/e_ukraine_medium"-->
-<!--            android:text="@string/bullet_speed_ukr"-->
-<!--            android:textColor="#000000"-->
-<!--            android:textSize="20sp"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent"-->
-<!--            app:layout_constraintVertical_bias="0.25"/>-->
-
-<!--        <EditText-->
-<!--            android:id="@+id/edit_bullet_speed"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-
-<!--            android:layout_weight="1"-->
-<!--            android:autoSizeTextType="uniform"-->
-<!--            android:ems="10"-->
-<!--            android:hint="@string/meters_sec"-->
-<!--            android:inputType="numberDecimal"-->
-<!--            android:minHeight="48dp"-->
-<!--            android:textAlignment="textStart"-->
-<!--            android:background="@android:drawable/editbox_background"-->
-<!--            app:layout_constraintEnd_toEndOf="parent" />-->
-<!--    </LinearLayout>-->
-
-<!--    <LinearLayout-->
-<!--        android:id="@+id/balisticCiefficientLayout"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="horizontal"-->
-<!--        android:padding="5dp"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/bulletSpeedLayout">-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/bal_coefficient"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="2"-->
-<!--            android:fontFamily="@font/e_ukraine_medium"-->
-<!--            android:text="@string/balistic_coefficient_ukr"-->
-<!--            android:textColor="#000000"-->
-<!--            android:textSize="20sp"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent"-->
-<!--            app:layout_constraintVertical_bias="0.25"/>-->
-
-<!--        <EditText-->
-<!--            android:id="@+id/edit_bc"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="1"-->
-<!--            android:autoSizeTextType="uniform"-->
-<!--            android:ems="10"-->
-<!--            android:hint="@string/g7"-->
-<!--            android:inputType="numberDecimal"-->
-<!--            android:minHeight="48dp"-->
-<!--            android:textAlignment="textStart"-->
-<!--            android:background="@android:drawable/editbox_background"-->
-<!--            app:layout_constraintEnd_toEndOf="parent" />-->
-<!--    </LinearLayout>-->
     <LinearLayout
         android:id="@+id/distanceLayout"
         android:layout_width="match_parent"
@@ -217,11 +145,13 @@
             android:layout_width="0dp"
             android:layout_height="55dp"
             android:layout_weight="1"
-            android:background="@color/Main_Window_Background"
+            android:background="@drawable/round_btn"
+            android:backgroundTint="@color/light_grey"
             android:onClick="move_to_map"
             android:padding="10dp"
             android:scaleType="centerCrop"
             android:src="@drawable/mm"
+            android:layout_marginRight="5dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.696"
@@ -258,7 +188,7 @@
             android:layout_height="match_parent"
             android:layout_weight="2"
             android:fontFamily="@font/e_ukraine_medium"
-            android:gravity="left|center_vertical"
+            android:gravity="start|center_vertical"
             android:text="@string/wind_speed_ukr"
             android:textColor="#000000"
             android:textSize="20sp"
@@ -346,6 +276,7 @@
         android:id="@+id/buttonsEvery"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
         android:orientation="horizontal"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
@@ -357,27 +288,30 @@
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_weight="0.5"
-            android:background="@color/Main_Window_Background"
+            android:background="@drawable/round_btn"
+            android:backgroundTint="@color/light_grey"
             android:onClick="move_to_settings"
             android:padding="10dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/set"
+            android:src="@drawable/bullet_ico"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.69"
             tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
-
 
         <Button
             android:id="@+id/calculate"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:autoSizeTextType="uniform"
-            android:background="@color/Main_Window_Background"
+            android:background="@drawable/round_btn"
+            android:backgroundTint="@color/grey"
             android:fontFamily="@font/e_ukraine_bold"
+            android:layout_marginLeft="16dp"
             android:onClick="calculate"
             android:text="@string/calculate_ukr"
+            android:textColor="@color/black"
+            android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.944" />

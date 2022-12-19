@@ -5,15 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/Main_Window_Background"
     tools:context=".UpdateBulletActivity">
 
     <!--edit text to enter bullet name-->
     <EditText
         android:id="@+id/idEdtBulletName"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:hint="Enter bullet name" />
+        android:minHeight="48dp"
+        android:background="@android:drawable/editbox_background"
+        android:hint="@string/EBN" />
 
     <!--edit text to enter bullet caliber-->
     <EditText
@@ -21,7 +25,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:hint="Enter bullet caliber" />
+        android:minHeight="48dp"
+        android:background="@android:drawable/editbox_background"
+        android:hint="@string/EBC" />
 
     <!--edit text to display bullet weight-->
     <EditText
@@ -29,7 +35,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:hint="Enter bullet weight" />
+        android:minHeight="48dp"
+        android:background="@android:drawable/editbox_background"
+        android:hint="@string/EBW" />
 
     <!--edit text for bullet G1-->
     <EditText
@@ -37,7 +45,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:hint="Enter bullet G1" />
+        android:minHeight="48dp"
+        android:background="@android:drawable/editbox_background"
+        android:hint="@string/EBG1" />
 
     <!--edit text for G7-->
     <EditText
@@ -45,7 +55,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:hint="Enter bullet G7" />
+        android:minHeight="48dp"
+        android:background="@android:drawable/editbox_background"
+        android:hint="@string/EBG7" />
 
     <!--edit text for start speed-->
     <EditText
@@ -53,7 +65,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:hint="Enter bullet start speed" />
+        android:minHeight="48dp"
+        android:background="@android:drawable/editbox_background"
+        android:hint="@string/EBSS" />
 
     <!--button for updating bullet-->
     <Button
@@ -61,7 +75,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="Update bulllet"
+        android:textSize="20dp"
+        android:text="@string/UB"
         android:textAllCaps="false" />
 
     <!--button for deleting bullet-->
@@ -70,7 +85,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="Delete bullet"
+        android:textSize="20dp"
+        android:text="@string/DB"
         android:textAllCaps="false" />
 
     <!--button for using bullet-->
@@ -79,7 +95,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="Use bullet"
+        android:text="@string/use_B"
+        android:textSize="20dp"
         android:textAllCaps="false" />
 
 </LinearLayout>

@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
             double wind_direction = Double.parseDouble(wind_degree.getText().toString());
             if (wind_direction>12||wind_direction<0)
             {
-                Toast.makeText(this, "Enter the wind direction correctly", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, getString(R.string.wind_dir_error), Toast.LENGTH_LONG).show();
                 return;
             }
             Shot.setDistance(Double.parseDouble(distance.getText().toString()));

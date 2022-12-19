@@ -12,6 +12,7 @@
     <string name="error_Enter_all_data">Введіть всі дані</string>
 
     <string name="caliber">Введіть калібр</string>
+    <string name="name">Введіть назву</string>
     <string name="weight">Введіть вагу</string>
     <string name="BC">Введіть BC(G1)</string>
     <string name="BC_1">Введіть BC(G7 якщо існує)</string>
@@ -23,4 +24,32 @@
     <string name="meters_sec">  м/c</string>
     <string name="degree">  години</string>
     <string name="g7">  G7</string>
+
+    <string name="EBN">Введіть назву кулі</string>
+    <string name="EBC">Введіть калібр кулі</string>
+    <string name="EBW">Введіть вагу кулі</string>
+    <string name="EBG1">Введіть G1 кулі</string>
+    <string name="EBG7">Введіть G7 кулі</string>
+    <string name="EBSS">Введіть стартову швидкістькулі</string>
+    <string name="UB">Оновини кулю</string>
+    <string name="DB">Видалити кулю</string>
+    <string name="use_B">Використати кулю</string>
+
+    <string name="provider">Сервісний провайдер недоступний</string>
+    <string name="wind_dir_error">Введіть правильно швидкість вітру</string>
+    <string name="enter_data">Будь-ласка введіть всі дані... </string>
+    <string name="no_caliber">Не існує такого калібра </string>
+    <string name="bullet_exist">Куля з такою назвою вже існує </string>
+    <string name="bullet_added">Куля успішно додана. </string>
+    <string name="bullet_upd">Куля успішно оновлена. </string>
+    <string name="bullet_del">Куля успішно видалена. </string>
+    <string name="check_inputs">Провірте вхідні дані та спробуйте знову </string>
+    <string name="square">площа = </string>
+
+    <string name="BN">Назва кулі</string>
+    <string name="BCal">Калібр кулі</string>
+    <string name="BW">Вага кулі</string>
+    <string name="BG1">G1 кулі</string>
+    <string name="BG7">G7 кулі</string>
+    <string name="BSS">Стартова швидкість кулі</string>
 </resources>
