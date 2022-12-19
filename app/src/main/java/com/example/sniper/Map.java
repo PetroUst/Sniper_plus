@@ -67,6 +67,7 @@ public class Map extends FragmentActivity implements OnMapReadyCallback, GoogleM
         //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation,12));
 
     }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -107,6 +108,7 @@ public class Map extends FragmentActivity implements OnMapReadyCallback, GoogleM
             LatLng userLocation = new LatLng(latitude,longitude);
             //mMap.clear();
             mMap.addMarker(new MarkerOptions().position(userLocation));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation,16));
         }
 
         mMap.setOnMapLongClickListener(this);

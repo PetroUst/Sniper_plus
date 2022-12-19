@@ -6,7 +6,7 @@ public class Shot {
     private static double height;
     private static double distance = 0;
     private static double targetHeight;
-    private static double windSpeed = 0.000001;
+    private static double windSpeed = 0;
     private static double windDegree;
     private static double T = 0;
 
@@ -84,6 +84,11 @@ public class Shot {
     }
 
 
+    private static double wind_horizontal()
+    {
+        return 0;
+
+    }
     static double correctionV(){
         double correction = 0;
         double alpha1 = -(45 * Math.PI) / 180, alpha2 = (45 * Math.PI) / 180;
