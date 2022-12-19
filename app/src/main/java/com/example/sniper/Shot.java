@@ -86,8 +86,11 @@ public class Shot {
 
     private static double wind_horizontal()
     {
-        return 0;
-
+        return windSpeed*Math.sin(Math.toRadians(windDegree*30));
+    }
+    private static double wind_vertical()
+    {
+        return windSpeed*Math.cos(Math.toRadians(windDegree*30));
     }
     static double correctionV(){
         double correction = 0;
@@ -101,7 +104,7 @@ public class Shot {
 
         for (int i = 0; i < 100; i++){     //binary search
             correction = (alpha1 + alpha2) / 2;
-            vX = Bullet.speed * Math.cos(correction) - windV;
+            vX = Bullet.speed * Math.cos(correction) + wind_vertical();
             vY = Bullet.speed * Math.sin(correction);
 
             hCur = height;

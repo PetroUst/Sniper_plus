@@ -65,8 +65,6 @@ public class MainActivity extends AppCompatActivity {
         wind_degree = (EditText) findViewById(R.id.edit_wind_degree);
         target_height = (EditText) findViewById(R.id.edit_target_height);
         dbHandler.setValues();
-
-
     }
 
     public void calculate(View v) {
@@ -76,12 +74,16 @@ public class MainActivity extends AppCompatActivity {
         //дістаю дані з текстових полів на головному екрані
         try {
             //конвертую строки в дабл і передаю в поля класу shot
+            double wind_direction = Double.parseDouble(wind_degree.getText().toString());
+            if (wind_direction>12||wind_direction<0)
+            {
+                Toast.makeText(this, "Enter the wind direction correctly", Toast.LENGTH_LONG).show();
+                return;
+            }
             Shot.setDistance(Double.parseDouble(distance.getText().toString()));
             Shot.setWindDegree(Double.parseDouble(wind_degree.getText().toString()));
             Shot.setWindSpeed(Double.parseDouble(wind_speed.getText().toString()));
             Shot.setTargetHeight(Double.parseDouble(target_height.getText().toString()));
-
-
 
             String verticalC = String.format("%.2f", Shot.correctionV()) + "'";
             String horizontalC = String.format("%.2f", Shot.correctionH()) + "'";

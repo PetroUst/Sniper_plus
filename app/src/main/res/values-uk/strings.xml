@@ -2,7 +2,7 @@
     <string name="app_name">Sniper+</string>
     <string name="distance_ukr">Відстань</string>
     <string name= "wind_speed_ukr">Швидкість вітру</string>
-    <string name= "wind_degree_ukr">Кут між напрямком <br/> вітру і стволом</string>
+    <string name= "wind_degree_ukr">Напрям <br/> вітру</string>
     <string name= "bullet_speed_ukr">Початкова швидкість кулі</string>
     <string name= "target_height_ukr">Висота цілі</string>
     <string name = "balistic_coefficient_ukr">Балістичний коефіцієнт</string>
@@ -21,6 +21,6 @@
 
     <string name="meters">  м</string>
     <string name="meters_sec">  м/c</string>
-    <string name="degree">  градуси</string>
+    <string name="degree">  години</string>
     <string name="g7">  G7</string>
 </resources>
