@@ -43,7 +43,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    private DBHandler dbHandler;
     ImageButton settings_button,map_button;
     EditText distance,wind_speed,wind_degree,target_height;
     private ArrayList permissionsToRequest;
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     private final static int ALL_PERMISSIONS_RESULT = 101;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
+        dbHandler = new DBHandler(MainActivity.this);
         settings_button = (ImageButton) findViewById(R.id.settings);
         map_button = (ImageButton) findViewById(R.id.minimap);
         super.onCreate(savedInstanceState);
@@ -64,7 +64,11 @@ public class MainActivity extends AppCompatActivity {
         wind_speed = (EditText) findViewById(R.id.edit_wind_speed);
         wind_degree = (EditText) findViewById(R.id.edit_wind_degree);
         target_height = (EditText) findViewById(R.id.edit_target_height);
+        dbHandler.setValues();
+
+
     }
+
     public void calculate(View v) {
 
         TextView res_vertical = (TextView) findViewById(R.id.vertical_res);

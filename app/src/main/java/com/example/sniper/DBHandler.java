@@ -17,6 +17,8 @@ class DBHandler extends SQLiteOpenHelper {
 
     private static final  String TABLE_NAME2 = "calibers";
 
+    private static final  String TABLE_NAME3 = "useBullet";
+
     private static final String DIAMETER_COL = "diameter";
 
     private static final String ID_COL = "id";
@@ -65,22 +67,34 @@ class DBHandler extends SQLiteOpenHelper {
 
         db.execSQL(query_cal);
 
+        String query_useBullet = "CREATE TABLE " + TABLE_NAME3 + " ("
+                + ID_COL + " INTEGER, "
+                + NAME_COL + " TEXT, "
+                + CALIBER_COL + " TEXT, "
+                + WEIGHT_COL + " REAL,"
+                + G1_COL + " REAL,"
+                + G7_COL + " REAL,"
+                + START_SPEED_COL + " REAL)"
+                ;
+
+        // at last we are calling a exec sql
+        // method to execute above sql query
+        db.execSQL(query_useBullet);
+
         String create_query = "INSERT INTO " + TABLE_NAME + " (" + NAME_COL + ", " + CALIBER_COL + ", " + WEIGHT_COL + ", "
-                + G1_COL + ", " + G7_COL + ", " + START_SPEED_COL + ") VALUES ( \".308 Spitzer test\", \".308\", 147,  0.360, 0.180, 850)";
-        db.execSQL(create_query);
-
-        create_query = "INSERT INTO " + TABLE_NAME + " (" + NAME_COL + ", " + CALIBER_COL + ", " + WEIGHT_COL + ", "
-                + G1_COL + ", " + G7_COL + ", " + START_SPEED_COL + ") VALUES ( \".308 Spitzer test2\", \".308\", 147,  0.360, 0.180, 850)";
-        db.execSQL(create_query);
-
-        create_query = "INSERT INTO " + TABLE_NAME + " (" + NAME_COL + ", " + CALIBER_COL + ", " + WEIGHT_COL + ", "
-                + G1_COL + ", " + G7_COL + ", " + START_SPEED_COL + ") VALUES ( \".408 Spitzer\", \".408\", 147,  0.360, 0.180, 850)";
+                + G1_COL + ", " + G7_COL + ", " + START_SPEED_COL + ") VALUES ( \".308 Spitzer test\", \".308\", 147,  0.360, 0.180, 850)"
+                + ", ( \".308 Spitzer test2\", \".308\", 147,  0.360, 0.180, 850)"
+                + ", ( \".408 Spitzer\", \".408\", 147,  0.360, 0.180, 850)";
         db.execSQL(create_query);
 
         create_query = "INSERT INTO " + TABLE_NAME2 + " (" + CALIBER_COL + ", " + DIAMETER_COL + ") VALUES (\".308\", 7.82)";
         db.execSQL(create_query);
 
         create_query = "INSERT INTO " + TABLE_NAME2 + " (" + CALIBER_COL + ", " + DIAMETER_COL + ") VALUES (\".408\", 150)";
+        db.execSQL(create_query);
+
+        create_query = "INSERT INTO " + TABLE_NAME3 + " (" + ID_COL + ", " + NAME_COL + ", " + CALIBER_COL + ", " + WEIGHT_COL + ", "
+                + G1_COL + ", " + G7_COL + ", " + START_SPEED_COL + ") VALUES ( 1, \".308 Spitzer test2\", \".308\", 147,  0.360, 0.180, 850)";
         db.execSQL(create_query);
 
     }
@@ -113,6 +127,7 @@ class DBHandler extends SQLiteOpenHelper {
         // at last we are closing our
         // database after adding database.
         db.close();
+
     }
 
     @Override
@@ -216,9 +231,47 @@ class DBHandler extends SQLiteOpenHelper {
             ssquare = cC.getFloat(cC.getColumnIndex("diameter"));
             cC.close();
         }
+        db.close();
         return ssquare;
     }
 
+    public void setUseBullet(String bulletName, Double bulletCal, Float bulletWeight,
+                              Float bulletG1, Float bulletG7, Float bulletStartSpeed) {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put(NAME_COL, bulletName);
+        values.put(CALIBER_COL, bulletCal);
+        values.put(WEIGHT_COL, bulletWeight);
+        values.put(G1_COL, bulletG1);
+        values.put(G7_COL, bulletG7);
+        values.put(START_SPEED_COL, bulletStartSpeed);
+
+        db.update(TABLE_NAME3, values, "id=?", new String[]{"1"});
+
+        db.close();
+    }
+
+
+    public void setValues() {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        Cursor val = db.rawQuery("SELECT * FROM " + TABLE_NAME3 +
+                " WHERE " + ID_COL + " = 1" , null);
+
+        if (val != null && val.moveToFirst()) {
+           Shot.Bullet.setBc(val.getDouble(val.getColumnIndex("G1")));
+           Shot.Bullet.setSpeed(val.getDouble((val.getColumnIndex("start_speed"))));
+           Shot.Bullet.setWeight(val.getDouble((val.getColumnIndex("weight"))));
+           //Shot.Bullet.setSquare(Math.pow(useBullet(String.valueOf(val.getFloat(val.getColumnIndex("caliber"))))/1000,2)*Math.PI/4);
+            Shot.Bullet.setSquare(val.getDouble((val.getColumnIndex("caliber"))));
+
+            val.close();
+        }
+
+        db.close();
+    }
 }
 
 

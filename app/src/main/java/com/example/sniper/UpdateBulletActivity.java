@@ -88,6 +88,7 @@ public class UpdateBulletActivity extends AppCompatActivity {
                     Toast.makeText(UpdateBulletActivity.this, "Check inputs and try again", Toast.LENGTH_SHORT).show();
                 }
 
+
             }
         });
 
@@ -116,10 +117,14 @@ public class UpdateBulletActivity extends AppCompatActivity {
 
                 String sqshow = "square = " + sq;
             Toast.makeText(UpdateBulletActivity.this, sqshow, Toast.LENGTH_SHORT).show();
+            /*
             Shot.Bullet.setBc(Double.parseDouble(bulletG1));
             Shot.Bullet.setSquare(sq);
             Shot.Bullet.setWeight(Double.parseDouble(bulletWeight));
-            Shot.Bullet.setSpeed(Double.parseDouble(bulletStartSpeed));
+            Shot.Bullet.setSpeed(Double.parseDouble(bulletStartSpeed));*/
+            dbHandler.setUseBullet(bulletName, sq, Float.valueOf(bulletWeight),
+                    Float.valueOf(bulletG1), Float.valueOf(bulletG7), Float.valueOf(bulletStartSpeed));
+            dbHandler.setValues();
             }
         });
 
