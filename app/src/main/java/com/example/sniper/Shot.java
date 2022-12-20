@@ -86,7 +86,13 @@ public class Shot {
 
     private static double wind_horizontal()
     {
-        return windSpeed*Math.sin(Math.toRadians(windDegree*30));
+        double d,p,a, w_speed = Math.sin(Math.toRadians(windDegree*30))*windSpeed;
+        d=Math.sqrt(Bullet.getSquare()*4/Math.PI);
+        p=0.613*Math.pow(w_speed,2);
+        a=(d*0.02*p*3)/Bullet.getWeight();
+        if (w_speed<0){a*=-1;}
+        return (a*T*1.5)/2;
+//        return Math.sin(Math.toRadians(windDegree*30));
     }
     private static double wind_vertical()
     {
@@ -151,9 +157,11 @@ public class Shot {
         if (error) return 0;
 
         double spinDrift = 1.25 * (1.7 + 1.2) * Math.pow(T, 1.83) * 25.4;    //millimetres
-        double windDrift = 0;   // = getWindH() * T
+        double windDrift = wind_horizontal()*T;   // = getWindH() * T
 
-        double degrees =  - Math.atan( ((spinDrift + windDrift) / 1000 / Shot.distance ) ) * 180 / Math.PI;
+//        double degrees =  - Math.atan( ((spinDrift + windDrift) / 1000 / Shot.distance ) ) * 180 / Math.PI;
+        double degrees =  - Math.atan( (((spinDrift/1000) + windDrift) / Shot.distance ) ) * 180 / Math.PI;
         return degrees * 60;
+//        return wind_horizontal();
     }
 }

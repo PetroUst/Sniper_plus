@@ -94,8 +94,6 @@ public class Map extends FragmentActivity implements OnMapReadyCallback, GoogleM
 
     }
 
-
-
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
@@ -250,7 +248,7 @@ public class Map extends FragmentActivity implements OnMapReadyCallback, GoogleM
 
         Toast.makeText(this, getString(R.string.distance_ukr)+": "+Double.toString(distance)+getString(R.string.meters), Toast.LENGTH_SHORT).show();
         Intent intent = new Intent();
-        intent.putExtra(getString(R.string.distance_ukr),(String.format("%.2f",distance).replace(',','.')));
+        intent.putExtra("distanсe",(String.format("%.2f",distance).replace(',','.')));
         setResult(RESULT_OK,intent);
     }
 

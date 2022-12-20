@@ -93,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
         } catch (Exception ex) {
             Toast.makeText(this, getString(R.string.error_Enter_all_data), Toast.LENGTH_LONG).show();
         }
+
 //        permissions.add(ACCESS_FINE_LOCATION);
 //        permissions.add(ACCESS_COARSE_LOCATION);
 //
@@ -161,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (data == null) {return;}
-        String res = data.getStringExtra("distanse");
+        String res = data.getStringExtra("distanсe");
         distance.setText(res);
     }
 

@@ -114,9 +114,7 @@ public class UpdateBulletActivity extends AppCompatActivity {
                 if (sq == 0){
                     Toast.makeText(UpdateBulletActivity.this, getString(R.string.no_caliber), Toast.LENGTH_SHORT).show();
                     return;}
-
-                String sqshow = getString(R.string.square) + sq;
-            Toast.makeText(UpdateBulletActivity.this, sqshow, Toast.LENGTH_SHORT).show();
+            Toast.makeText(UpdateBulletActivity.this, getString(R.string.active_bullet), Toast.LENGTH_SHORT).show();
             /*
             Shot.Bullet.setBc(Double.parseDouble(bulletG1));
             Shot.Bullet.setSquare(sq);

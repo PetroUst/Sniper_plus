@@ -10,6 +10,7 @@
     <string name="horizontal_ukr">Horizontal correction: </string>
     <string name="calculate_ukr">Calculate</string>
     <string name="error_Enter_all_data">Enter all data</string>
+    <string name="active_bullet">Bullet is active</string>
 
     <string name="caliber">Enter caliber</string>
     <string name="name">Enter name</string>

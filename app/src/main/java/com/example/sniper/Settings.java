@@ -1,5 +1,6 @@
 package com.example.sniper;
 
+import androidx.activity.OnBackPressedDispatcher;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -72,7 +73,12 @@ public class Settings extends AppCompatActivity {
         }
     }
 
-
+    @Override
+    public void onBackPressed()
+    {
+        Intent allBullets = new Intent(Settings.this, MainActivity.class);
+        startActivity(allBullets);
+    }
     public void show_bullets(View v) {
         // opening a new activity via a intent.
         Intent allBullets = new Intent(Settings.this, ViewBullets.class);

@@ -8,8 +8,9 @@
     <string name = "balistic_coefficient_ukr">Балістичний коефіцієнт</string>
     <string name = "vertical_ukr">Вертикальна поправка: </string>
     <string name = "horizontal_ukr">Горизонтальна поправка: </string>
-    <string name="calculate_ukr">Вирахувати поправки</string>
+    <string name="calculate_ukr">Вирахувати</string>
     <string name="error_Enter_all_data">Введіть всі дані</string>
+    <string name="active_bullet">Кулю обрано</string>
 
     <string name="caliber">Введіть калібр</string>
     <string name="name">Введіть назву</string>
@@ -38,12 +39,12 @@
     <string name="provider">Сервісний провайдер недоступний</string>
     <string name="wind_dir_error">Введіть правильно швидкість вітру</string>
     <string name="enter_data">Будь-ласка введіть всі дані... </string>
-    <string name="no_caliber">Не існує такого калібра </string>
+    <string name="no_caliber">Не існує такого калібру </string>
     <string name="bullet_exist">Куля з такою назвою вже існує </string>
     <string name="bullet_added">Куля успішно додана. </string>
     <string name="bullet_upd">Куля успішно оновлена. </string>
     <string name="bullet_del">Куля успішно видалена. </string>
-    <string name="check_inputs">Провірте вхідні дані та спробуйте знову </string>
+    <string name="check_inputs">Перевірте вхідні дані та спробуйте знову </string>
     <string name="square">площа = </string>
 
     <string name="BN">Назва кулі</string>
